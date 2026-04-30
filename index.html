@@ -173,6 +173,12 @@ footer{background:var(--cream);padding:1.5rem 3rem;display:flex;justify-content:
 @media(max-width:1100px){
   .hero-stage{padding:2rem 3vw 0}
 }
+.brandstrip{background:var(--cream);padding:4rem 6rem}
+.brandstrip-inner{display:flex;gap:1rem;justify-content:center;align-items:stretch;width:100%;max-width:900px;margin:0 auto}
+.brand-frame{flex:1;aspect-ratio:3/4;border-radius:8px;overflow:hidden;position:relative;background:#C5B8A8}
+.brand-frame img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform 0.35s ease}
+.brand-frame:hover img{transform:scale(1.03)}
+
 @media(max-width:768px){
   nav{padding:1rem 1.5rem}
   .nav-links{display:none}
@@ -186,8 +192,8 @@ footer{background:var(--cream);padding:1.5rem 3rem;display:flex;justify-content:
   .avail-text{font-size:0.55rem}
   .hero-top-actions{gap:0.2rem}
   .hero-ctas{flex-direction:column;gap:0.3rem;align-items:center}
-  .btn-primary,.btn-outline{padding:0.4rem 0.8rem;font-size:0.55rem;letter-spacing:0.1em;width:auto;text-align:center}
-  .hero-meta-line{font-size:0.65rem}
+  .btn-primary,.btn-outline{padding:0.4rem 2rem;font-size:0.55rem;letter-spacing:0.1em;width:auto;text-align:center;min-width:140px}
+  .hero-meta-line{font-size:0.65rem;margin-top:0.5rem}
   .hero-lower{flex-direction:row;align-items:flex-end;margin-top:0.3rem;flex:1;min-height:0;overflow:hidden}
   .hero-stats-left{flex-direction:column;flex-wrap:nowrap;gap:0.6rem;text-align:right;padding:0 2vw 0 0;width:auto;flex:1;align-self:center}
   .hero-stats-right{flex-direction:column;flex-wrap:nowrap;gap:0.6rem;text-align:left;padding:0 0 0 2vw;width:auto;flex:1;align-self:center}
@@ -221,11 +227,6 @@ footer{background:var(--cream);padding:1.5rem 3rem;display:flex;justify-content:
   .brandstrip-inner{flex-wrap:nowrap;justify-content:center;min-width:unset;gap:0.5rem}
   .brand-frame{flex:1;width:auto;scroll-snap-align:unset;aspect-ratio:3/4}
 }
-.brandstrip{background:var(--cream);padding:4rem 6rem}
-.brandstrip-inner{display:flex;gap:1rem;justify-content:center;align-items:stretch;width:100%;max-width:900px;margin:0 auto}
-.brand-frame{flex:1;aspect-ratio:3/4;border-radius:8px;overflow:hidden;position:relative;background:#C5B8A8}
-.brand-frame img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform 0.35s ease}
-.brand-frame:hover img{transform:scale(1.03)}
 
 @media(max-width:480px){
   .video-grid{grid-template-columns:repeat(2,1fr);gap:0.75rem}
