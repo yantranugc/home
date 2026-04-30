@@ -15,7 +15,7 @@
   --cream2:#DDD8CE;
   --cream3:#D0C8BC;
   --green:#243447;
-  --green2:#5B7FA0;
+  --green2:#4A7A9B;
   --green3:#B8CCDF;
   --char:#1A1A18;
   --gray:#6E6E6E;
@@ -44,8 +44,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .mobile-menu a:last-child{border-bottom:none}
 .mobile-menu a:hover{color:var(--green)}
 
-.hero{min-height:100vh;display:flex;flex-direction:column;background:#243447;padding-top:57px;overflow:hidden}
-.hero-stage{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;width:100%;padding:0.5rem 2rem 0;box-sizing:border-box}
+.hero{height:100vh;display:flex;flex-direction:column;background:#243447;padding-top:57px;overflow:hidden}
+.hero-stage{flex:1;display:flex;flex-direction:column;align-items:center;position:relative;width:100%;padding:0.5rem 2rem 0;box-sizing:border-box;min-height:0}
 .hero-top{display:flex;flex-direction:column;align-items:center;width:100%;flex-shrink:0}
 .hero-avail{display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
 .avail-dot{width:7px;height:7px;border-radius:50%;background:#4CAF50;box-shadow:0 0 0 2px rgba(76,175,80,0.25);flex-shrink:0;animation:pulse 2s ease-in-out infinite}
@@ -56,22 +56,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .hero-ugc-title{font-size:1rem;letter-spacing:0.28em;text-transform:uppercase;color:rgba(184,204,223,0.8);text-align:center;margin-bottom:1.2rem;font-weight:400}
 .hero-top-actions{display:flex;flex-direction:column;align-items:center;gap:0.9rem;margin-bottom:0}
 .hero-ctas{display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center}
-.btn-primary{background:#1E3A52;color:#F5F0E8;padding:0.6rem 1.2rem;font-family:'Outfit',sans-serif;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:2px;border:none;cursor:pointer;transition:background 0.2s,transform 0.15s;display:inline-block;font-weight:500}
-.btn-primary:hover{background:#152c3e;transform:translateY(-1px)}
+.btn-primary{background:#1E3A52;color:#F5F0E8;padding:0.6rem 1.2rem;font-family:'Outfit',sans-serif;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:2px;border:1.5px solid rgba(184,204,223,0.5);cursor:pointer;transition:background 0.2s,transform 0.15s;display:inline-block;font-weight:500}
+.btn-primary:hover{background:#2a4e6e;border-color:rgba(184,204,223,0.8);transform:translateY(-1px)}
 .btn-outline{background:rgba(255,255,255,0.1);color:#F5F0E8;padding:0.6rem 1.2rem;font-family:'Outfit',sans-serif;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:2px;border:1.5px solid rgba(245,240,232,0.3);cursor:pointer;transition:all 0.2s;display:inline-block}
 .btn-outline:hover{background:rgba(255,255,255,0.18);border-color:rgba(245,240,232,0.65);transform:translateY(-1px)}
 .hero-meta-line{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:rgba(255,255,255,0.45);letter-spacing:0.04em}
 .hero-meta-line a{color:rgba(255,255,255,0.65);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15);transition:color 0.2s}
 .hero-meta-line a:hover{color:#fff}
 .hero-lower{display:flex;align-items:flex-end;justify-content:center;width:100%;gap:0;margin-top:0.5rem}
-.hero-stats-left{display:flex;flex-direction:column;gap:1.4rem;align-self:flex-start;text-align:right;padding-right:2.5rem;flex-shrink:0;width:220px;padding-top:1rem}
-.hero-stats-right{display:flex;flex-direction:column;gap:1.4rem;align-self:flex-start;text-align:left;padding-left:2.5rem;flex-shrink:0;width:220px;padding-top:1rem}
+.hero-stats-left{display:flex;flex-direction:column;gap:1.8rem;align-self:flex-start;text-align:right;padding-right:2.5rem;flex-shrink:0;width:220px;padding-top:1rem}
+.hero-stats-right{display:flex;flex-direction:column;gap:1.8rem;align-self:flex-start;text-align:left;padding-left:2.5rem;flex-shrink:0;width:220px;padding-top:1rem}
 .hstat-lbl{font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--green3);display:block;margin-bottom:0.2rem;opacity:0.7;font-style:normal;font-family:'Outfit',sans-serif}
 .hstat-val{font-size:1.15rem;font-weight:400;color:#F5F0E8;display:block;line-height:1.4}
 .hstat-val a{color:#F5F0E8;text-decoration:none;border-bottom:1px solid rgba(184,204,223,0.4);padding-bottom:1px;transition:border-color 0.2s}
 .hstat-val a:hover{border-color:rgba(184,204,223,0.9)}
-.hero-photo-col{flex-shrink:0;display:flex;align-items:flex-end;justify-content:center}
-.hero-photo{width:clamp(200px,20vw,320px);position:relative;z-index:2}
+.hero-photo-col{flex-shrink:0;display:flex;align-items:flex-end;justify-content:center;align-self:flex-end}
+.hero-photo{width:clamp(280px,28vw,440px);position:relative;z-index:2;line-height:0}
 .hero-photo img{width:100%;display:block;object-fit:contain;object-position:bottom}
 
 .examples-section{padding:5rem 3rem;border-top:3px solid #243447}
@@ -276,7 +276,7 @@ footer{background:var(--cream);padding:1.5rem 3rem;display:flex;justify-content:
         <div>
           <span class="hstat-lbl">Background</span>
           <span class="hstat-val">Engineer in Tech</span>
-          <span class="hstat-val">App Developer</span>
+          <span class="hstat-val">& App Developer</span>
         </div>
         <div>
           <span class="hstat-lbl">Also</span>
@@ -285,8 +285,8 @@ footer{background:var(--cream);padding:1.5rem 3rem;display:flex;justify-content:
         <div>
           <span class="hstat-lbl">Interests</span>
           <span class="hstat-val">Running</span>
-          <span class="hstat-val">Jiu-Jitsu</span>
-          <span class="hstat-val">Yoga</span>
+          <span class="hstat-val">Outdoors</span>
+          <span class="hstat-val">Cooking</span>
         </div>
       </div>
 
@@ -309,7 +309,8 @@ footer{background:var(--cream);padding:1.5rem 3rem;display:flex;justify-content:
         </div>
         <div>
           <span class="hstat-lbl">Content</span>
-          <span class="hstat-val"><a href="#examples">Paid &amp; Organic UGC</a></span>
+          <span class="hstat-val"><a href="#examples">Paid</a></span>
+          <span class="hstat-val"><a href="#examples">Organic</a></span>
           <span class="hstat-val"><a href="#photos">Photography</a></span>
         </div>
       </div>
