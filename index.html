@@ -26,12 +26,12 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 @keyframes pulseAnim{0%{box-shadow:0 0 0 0 rgba(74,222,128,0.6)}70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
 
 /* HERO */
-#home{min-height:100vh;display:flex;flex-direction:column;padding:60px 48px 0;background:#2E5F80}
-.home-inner{display:flex;align-items:center;justify-content:center;gap:48px;flex:1;padding-bottom:24px}
+#home{min-height:100vh;display:flex;flex-direction:column;padding:60px 52px 0;background:#2E5F80}
+.home-inner{display:flex;align-items:center;justify-content:center;gap:72px;flex:1;padding-bottom:24px}
 .hero-left{flex:0 0 auto;display:flex;flex-direction:column;gap:12px;max-width:520px}
 .open-collab{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#9ECFE4}
 .oc-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:pulseAnim 2s infinite}
-.headline{font-family:'Abril Fatface',serif;font-size:clamp(58px,7vw,100px);line-height:1.05;color:#F5F0E8}
+.headline{font-family:'Abril Fatface',serif;font-size:clamp(60px,7.5vw,105px);line-height:1.05;color:#F5F0E8}
 .headline .yan-word{color:#9ECFE4}
 .headline span.letter{display:inline-block;transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1)}
 .headline span.letter:hover{transform:translateY(-10px)}
@@ -51,7 +51,8 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .it-vals li{list-style:disc;margin-left:14px;font-size:11px}
 .niches{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 .niche-tag{background:rgba(158,207,228,0.25);color:#d4edf8;border:1px solid rgba(158,207,228,0.55);border-radius:999px;padding:5px 14px;font-size:11px;font-weight:600;letter-spacing:0.3px}
-.scroll-arrow{display:inline-flex;flex-direction:row;align-items:center;gap:5px;cursor:pointer;opacity:0.6;transition:opacity 0.2s;margin-left:10px}
+.scroll-arrow-wrap{display:flex;justify-content:flex-start;padding-left:2px;margin-top:4px}
+.scroll-arrow{display:inline-flex;flex-direction:row;align-items:center;gap:5px;cursor:pointer;opacity:0.6;transition:opacity 0.2s}
 .scroll-arrow:hover{opacity:0.95}
 .scroll-arrow-line{font-size:20px;line-height:1;color:rgba(245,240,232,0.9);animation:bounce 1.8s ease-in-out infinite}
 .scroll-arrow-txt{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:1px;color:rgba(245,240,232,0.82);white-space:nowrap}
@@ -64,10 +65,10 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .stamp-frame{position:relative;background:white;padding:8px;box-shadow:3px 6px 22px rgba(0,0,0,0.14);outline:2px dashed rgba(88,64,46,0.2);outline-offset:-4px}
 .photo-stamp{transform:rotate(-3.5deg)}
 .video-stamp{transform:rotate(2.5deg)}
-.stamp-inner{width:300px;height:520px;overflow:hidden;background:linear-gradient(145deg,#e0d3c4,#cfc0ae);display:flex;align-items:center;justify-content:center}
+.stamp-inner{width:320px;height:550px;overflow:hidden;background:linear-gradient(145deg,#e0d3c4,#cfc0ae);display:flex;align-items:center;justify-content:center}
 .stamp-inner img{width:100%;height:100%;object-fit:cover;display:block}
 .stamp-ph{font-family:'Special Elite',monospace;font-size:11px;opacity:0.32;text-align:center;padding:10px;line-height:1.7}
-.video-inner{width:300px;height:520px;background:linear-gradient(145deg,#2a1e14,#1a1008);position:relative;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.video-inner{width:320px;height:550px;background:linear-gradient(145deg,#2a1e14,#1a1008);position:relative;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .video-inner:hover .v-overlay{opacity:1}
 .v-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.28);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0.55;transition:opacity 0.3s}
 .play-btn{width:44px;height:44px;border-radius:50%;background:rgba(250,250,242,0.92);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
@@ -114,7 +115,8 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .sdot.active{background:var(--sky);width:22px;border-radius:999px}
 .sarrow{background:none;border:1.5px solid rgba(88,64,46,0.22);border-radius:999px;width:30px;height:30px;cursor:pointer;font-size:13px;color:var(--espresso);display:flex;align-items:center;justify-content:center;transition:all 0.2s}
 .sarrow:hover{background:var(--espresso);color:var(--cream);border-color:var(--espresso)}
-.gdrive-btn{display:inline-flex;align-items:center;gap:7px;border:1.5px solid rgba(88,64,46,0.18);border-radius:999px;padding:7px 16px;font-family:'Special Elite',monospace;font-size:10px;letter-spacing:1.5px;color:var(--espresso);text-decoration:none;margin-bottom:16px;transition:all 0.2s;background:rgba(88,64,46,0.03)}
+.gdrive-btn{display:inline-flex;align-items:center;gap:7px;border:1.5px solid rgba(88,64,46,0.3);border-radius:999px;padding:8px 18px;font-family:'Special Elite',monospace;font-size:10px;letter-spacing:1.5px;color:var(--espresso);text-decoration:none;transition:all 0.2s;background:rgba(88,64,46,0.06);white-space:nowrap}
+.gdrive-btn:hover{background:rgba(88,64,46,0.12);border-color:rgba(88,64,46,0.5)}
 .gdrive-btn:hover{background:rgba(88,64,46,0.07);border-color:rgba(88,64,46,0.3)}
 .gdrive-ico{width:15px;height:15px;flex-shrink:0}
 .video-grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
@@ -193,9 +195,9 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .zoom-label{font-size:10px;color:#888;font-family:-apple-system,sans-serif}
 .zoom-slider{-webkit-appearance:none;width:90px;height:3px;border-radius:2px;background:#ccc;outline:none;cursor:default;pointer-events:none;opacity:0.6}
 .zoom-slider::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:var(--sage)}
-.photos-content{background:#1c1c1e;padding:8px}
+.photos-content{background:#f5f5f0;padding:8px}
 .photo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:3px}
-.photo-cell{aspect-ratio:9/16;overflow:hidden;border-radius:2px;background:#2a2a2a;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.photo-cell{aspect-ratio:9/16;overflow:hidden;border-radius:2px;background:#e8e4de;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .photo-cell-ph{font-size:8px;color:#444;font-family:'Special Elite',monospace}
 
 /* ABOUT */
@@ -343,17 +345,18 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
   .chip{font-size:10px;padding:4px 11px}
   .copy-hint-txt{text-align:center;width:100%}
 
-  /* Info table lower, wider gap */
+  /* Info table — tighter top gap */
   .info-table{
     grid-template-columns:auto auto;
     gap:10px 52px;
     width:100%;
     text-align:left;
-    margin-top:16px;
+    margin-top:8px;
   }
 
-  /* Niches much lower */
-  .niches{justify-content:center;gap:5px;margin-top:20px}
+  /* Niches tighter */
+  .niches{justify-content:center;gap:5px;margin-top:10px}
+  .scroll-arrow-wrap{justify-content:center;margin-top:2px}
   .scroll-arrow{margin-left:0;justify-content:center;width:auto}
 
   /* Frames: bigger, lower (more padding top) */
@@ -545,6 +548,8 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         <span class="niche-tag">Travel</span>
         <span class="niche-tag">Lifestyle</span>
         <span class="niche-tag">Finance</span>
+      </div>
+      <div class="scroll-arrow-wrap">
         <div class="scroll-arrow" onclick="document.getElementById('videos').scrollIntoView({behavior:'smooth'})">
           <span class="scroll-arrow-txt">scroll to see my work</span>
           <span class="scroll-arrow-line">↓</span>
@@ -596,9 +601,9 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
 <section id="examples" style="padding:0">
   <div id="videos" style="background:#f5f0e8;padding:60px 72px 52px;scroll-margin-top:0">
     <div class="section-label">[ my work ]</div>
-    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px">
-      <div class="slide-title" style="font-family:'Abril Fatface',serif;font-size:22px;color:var(--espresso)">Paid &amp; Organic</div>
-      <a href="https://drive.google.com/YOUR_FOLDER" target="_blank" class="gdrive-btn" style="margin-bottom:0">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:22px;flex-wrap:wrap">
+      <div style="font-family:'Abril Fatface',serif;font-size:26px;color:var(--espresso);line-height:1">Paid &amp; Organic</div>
+      <a href="https://drive.google.com/YOUR_FOLDER" target="_blank" class="gdrive-btn">
         <svg class="gdrive-ico" viewBox="0 0 87.3 78"><path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="#0066da"/><path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z" fill="#00ac47"/><path d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z" fill="#ea4335"/><path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="#00832d"/><path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#2684fc"/><path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 27h27.45c0-1.55-.4-3.1-1.2-4.5z" fill="#ffba00"/></svg>
         DOWNLOAD ALL VIDEOS
       </a>
