@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yan Tran — UGC Creator</title>
+<title>Yan UGC</title>
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans:wght@300;400;500&family=Special+Elite&family=Fraunces:ital,wght@1,400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -26,12 +26,12 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 @keyframes pulseAnim{0%{box-shadow:0 0 0 0 rgba(74,222,128,0.6)}70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
 
 /* HERO */
-#home{min-height:100vh;display:flex;flex-direction:column;padding:60px 72px 0;background:#2E5F80}
-.home-inner{display:flex;align-items:center;gap:32px;flex:1;padding-bottom:24px}
+#home{min-height:100vh;display:flex;flex-direction:column;padding:60px 48px 0;background:#2E5F80}
+.home-inner{display:flex;align-items:center;gap:20px;flex:1;padding-bottom:24px}
 .hero-left{flex:1;display:flex;flex-direction:column;gap:12px;min-width:0}
 .open-collab{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#9ECFE4}
 .oc-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:pulseAnim 2s infinite}
-.headline{font-family:'Abril Fatface',serif;font-size:clamp(52px,6.5vw,90px);line-height:1.05;color:#F5F0E8}
+.headline{font-family:'Abril Fatface',serif;font-size:clamp(58px,7vw,100px);line-height:1.05;color:#F5F0E8}
 .headline .yan-word{color:#9ECFE4}
 .headline span.letter{display:inline-block;transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1)}
 .headline span.letter:hover{transform:translateY(-10px)}
@@ -45,7 +45,7 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .email-chip{background:var(--butter)!important;border-color:rgba(88,64,46,0.25)!important;cursor:pointer;font-weight:500;color:var(--espresso)!important;transition:all 0.2s}
 .email-chip:hover{background:#edc960!important}
 .copy-hint-txt{font-size:11px;font-family:'Special Elite',monospace;letter-spacing:1px;color:rgba(158,207,228,0.75);padding-left:2px}
-.info-table{display:grid;grid-template-columns:repeat(4,auto);gap:5px 28px;font-size:11px;padding:11px 14px;background:rgba(0,0,0,0.18);border-radius:10px;border-left:3px solid var(--butter)}
+.info-table{display:grid;grid-template-columns:repeat(2,auto);gap:10px 28px;font-size:11px;padding:11px 14px;background:rgba(0,0,0,0.18);border-radius:10px;border-left:3px solid var(--butter)}
 .it-label{font-family:'Special Elite',monospace;font-size:8px;letter-spacing:2px;color:#9ECFE4;text-transform:uppercase;padding-bottom:3px}
 .it-vals{line-height:1.8;color:rgba(245,240,232,0.72)}
 .it-vals li{list-style:disc;margin-left:14px;font-size:11px}
@@ -64,10 +64,10 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .stamp-frame{position:relative;background:white;padding:8px;box-shadow:3px 6px 22px rgba(0,0,0,0.14);outline:2px dashed rgba(88,64,46,0.2);outline-offset:-4px}
 .photo-stamp{transform:rotate(-3.5deg)}
 .video-stamp{transform:rotate(2.5deg)}
-.stamp-inner{width:260px;height:460px;overflow:hidden;background:linear-gradient(145deg,#e0d3c4,#cfc0ae);display:flex;align-items:center;justify-content:center}
+.stamp-inner{width:300px;height:520px;overflow:hidden;background:linear-gradient(145deg,#e0d3c4,#cfc0ae);display:flex;align-items:center;justify-content:center}
 .stamp-inner img{width:100%;height:100%;object-fit:cover;display:block}
 .stamp-ph{font-family:'Special Elite',monospace;font-size:11px;opacity:0.32;text-align:center;padding:10px;line-height:1.7}
-.video-inner{width:260px;height:460px;background:linear-gradient(145deg,#2a1e14,#1a1008);position:relative;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.video-inner{width:300px;height:520px;background:linear-gradient(145deg,#2a1e14,#1a1008);position:relative;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .video-inner:hover .v-overlay{opacity:1}
 .v-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.28);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0.55;transition:opacity 0.3s}
 .play-btn{width:44px;height:44px;border-radius:50%;background:rgba(250,250,242,0.92);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
@@ -226,19 +226,6 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .ap3{background:linear-gradient(145deg,#c8d0d8,#b8c0c8)}
 .ap4{background:linear-gradient(145deg,#d8c8d0,#c8b8c0)}
 
-/* CONTACT CUTOUT */
-.contact-cutout{
-  position:absolute;
-  bottom:0;
-  right:clamp(40px,8vw,160px);
-  height:clamp(260px,30vw,420px);
-  width:auto;
-  object-fit:contain;
-  object-position:bottom;
-  pointer-events:none;
-  z-index:2;
-  filter:drop-shadow(-6px 0 16px rgba(0,0,0,0.15));
-}
 #contact{padding:56px;background:linear-gradient(150deg,#e4eef5,#dce8f2);position:relative;overflow:hidden}
 .contact-pre{text-align:center;margin-bottom:26px}
 .bracket-label{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:3px;opacity:0.4;margin-bottom:8px}
@@ -450,7 +437,6 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
   .contact-email-big{font-size:16px;word-break:break-all}
   .imsg-win{width:100%}
   .bubble{max-width:85%;font-size:11px}
-  .contact-cutout{display:none}
 
   /* BOTTOM PHOTOS */
   .bottom-photos{padding:20px 16px;gap:8px}
@@ -546,7 +532,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           </ul>
         </div>
         <div>
-          <div class="it-label">TRAVELED</div>
+          <div class="it-label">Travel</div>
           <ul class="it-vals">
             <li>25+ Countries</li>
             <li>From nature to cities</li>
@@ -592,9 +578,9 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         </div>
         <!-- Intro video -->
         <div class="stamp-frame video-stamp" style="transform:rotate(2.5deg);margin-top:0">
-          <div class="video-inner" data-src="videos/intro.mp4" data-poster="" onclick="openPlayer(this)">
-            <video src="videos/intro.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;pointer-events:none" muted playsinline preload="none"></video>
-            <div class="v-overlay">
+          <div class="video-inner" onclick="playIntro(this)">
+            <video id="introVideo" src="videos/intro.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:0;z-index:1;display:block" playsinline preload="none"></video>
+            <div class="v-overlay" id="introOverlay">
               <div class="play-btn">▶</div>
               <span class="video-cap">intro</span>
             </div>
@@ -622,9 +608,10 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
       <!-- Card 1: Airalo -->
       <div class="vid-card-wrap">
         <div class="video-logo"><img src="images/airalo-logo.png" alt="Airalo"></div>
-        <div class="video-thumb-ref vc1-bg" data-src="videos/airalo.mp4" data-poster="images/airalo-cover.png" onclick="openPlayer(this)">
+        <div class="video-thumb-ref vc1-bg" onclick="playVideo(this)">
           <div class="phone-notch"></div>
           <img class="video-poster-img" src="images/airalo-cover.png" alt="Airalo cover">
+          <video src="videos/airalo.mp4" playsinline></video>
           <div class="play-btn-ref"></div>
         </div>
         <div class="vid-meta-clean">
@@ -637,9 +624,10 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
       <!-- Card 2: Wise -->
       <div class="vid-card-wrap">
         <div class="video-logo"><img src="images/wise-logo.png" alt="Wise"></div>
-        <div class="video-thumb-ref vc2-bg" data-src="videos/wise.mp4" data-poster="images/wise-cover.png" onclick="openPlayer(this)">
+        <div class="video-thumb-ref vc2-bg" onclick="playVideo(this)">
           <div class="phone-notch"></div>
           <img class="video-poster-img" src="images/wise-cover.png" alt="Wise cover">
+          <video src="videos/wise.mp4" playsinline></video>
           <div class="play-btn-ref"></div>
         </div>
         <div class="vid-meta-clean">
@@ -652,9 +640,10 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
       <!-- Card 3: DoorDash -->
       <div class="vid-card-wrap">
         <div class="video-logo"><img src="images/doordash-logo.png" alt="DoorDash"></div>
-        <div class="video-thumb-ref vc3-bg" data-src="videos/doordash.mp4" data-poster="images/doordash-cover.png" onclick="openPlayer(this)">
+        <div class="video-thumb-ref vc3-bg" onclick="playVideo(this)">
           <div class="phone-notch"></div>
           <img class="video-poster-img" src="images/doordash-cover.png" alt="DoorDash cover">
+          <video src="videos/doordash.mp4" playsinline></video>
           <div class="play-btn-ref"></div>
         </div>
         <div class="vid-meta-clean">
@@ -667,9 +656,10 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
       <!-- Card 4: Fujifilm -->
       <div class="vid-card-wrap">
         <div class="video-logo"><img src="images/fujifilm-logo.png" alt="Fujifilm"></div>
-        <div class="video-thumb-ref vc4-bg" data-src="videos/fujifilm.mp4" data-poster="images/fujifilm-cover.png" onclick="openPlayer(this)">
+        <div class="video-thumb-ref vc4-bg" onclick="playVideo(this)">
           <div class="phone-notch"></div>
           <img class="video-poster-img" src="images/fujifilm-cover.png" alt="Fujifilm cover">
+          <video src="videos/fujifilm.mp4" playsinline></video>
           <div class="play-btn-ref"></div>
         </div>
         <div class="vid-meta-clean">
@@ -682,46 +672,6 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
     </div>
   </div>
 </section>
-
-<!-- VIDEO PLAYER MODAL -->
-<div class="vid-modal-bd" id="vidModal" onclick="closePlayer(event)">
-  <div class="vid-modal-inner">
-    <button class="vid-modal-close" onclick="closePlayerBtn()">✕</button>
-    <div class="vid-player-wrap">
-      <video id="modalVideo" playsinline preload="metadata"></video>
-      <div class="vid-controls" id="vidControls">
-        <div class="vid-progress-wrap" onclick="seekVideo(event)" id="progressWrap">
-          <div class="vid-progress-bg">
-            <div class="vid-progress-fill" id="progressFill"></div>
-            <div class="vid-progress-thumb" id="progressThumb"></div>
-          </div>
-          <div class="vid-time-tooltip" id="timeTooltip"></div>
-        </div>
-        <div class="vid-ctrl-row">
-          <div class="vid-ctrl-left">
-            <button class="vid-btn" id="playPauseBtn" onclick="togglePlay()">▶</button>
-            <div class="vid-vol-wrap">
-              <button class="vid-btn" id="muteBtn" onclick="toggleMute()">🔊</button>
-              <input type="range" class="vid-vol-slider" id="volSlider" min="0" max="1" step="0.05" value="1" oninput="setVolume(this.value)">
-            </div>
-            <span class="vid-time-disp" id="timeDisp">0:00 / 0:00</span>
-          </div>
-          <div class="vid-ctrl-right">
-            <select class="vid-speed-sel" id="speedSel" onchange="setSpeed(this.value)">
-              <option value="0.5">0.5×</option>
-              <option value="0.75">0.75×</option>
-              <option value="1" selected>1×</option>
-              <option value="1.25">1.25×</option>
-              <option value="1.5">1.5×</option>
-              <option value="2">2×</option>
-            </select>
-            <button class="vid-btn" onclick="toggleFullscreen()">⛶</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- PHOTOS -->
 <section id="photos">
@@ -820,7 +770,6 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
       <button class="btn-form" onclick="openForm()">Fill Out My Form →</button>
     </div>
   </div>
-  <img src="images/contact-photo.jpg" alt="Yan" class="contact-cutout">
 </section>
 
 <!-- BOTTOM 3 PHOTOS -->
@@ -981,80 +930,30 @@ const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersect
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 setTimeout(()=>document.querySelectorAll('.fade-up').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible');}),80);
 
-// VIDEO PLAYER
-const modalVideo=document.getElementById('modalVideo');
-const progressFill=document.getElementById('progressFill');
-const progressThumb=document.getElementById('progressThumb');
-const timeDisp=document.getElementById('timeDisp');
-const playPauseBtn=document.getElementById('playPauseBtn');
-const timeTooltip=document.getElementById('timeTooltip');
-const progressWrap=document.getElementById('progressWrap');
-
-function fmtTime(s){const m=Math.floor(s/60);return m+':'+(Math.floor(s%60)+'').padStart(2,'0');}
-
-function openPlayer(el){
-  const src=el.getAttribute('data-src');
-  const poster=el.getAttribute('data-poster')||'';
-  if(!src)return;
-  modalVideo.src=src;
-  if(poster)modalVideo.poster=poster;
-  document.getElementById('vidModal').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closePlayerBtn(){
-  document.getElementById('vidModal').classList.remove('open');
-  modalVideo.pause();
-  modalVideo.src='';
-  document.body.style.overflow='';
-  playPauseBtn.textContent='▶';
-}
-function closePlayer(e){if(e.target===document.getElementById('vidModal'))closePlayerBtn();}
-
-function togglePlay(){
-  if(modalVideo.paused){modalVideo.play();playPauseBtn.textContent='⏸';}
-  else{modalVideo.pause();playPauseBtn.textContent='▶';}
-}
-function toggleMute(){
-  modalVideo.muted=!modalVideo.muted;
-  document.getElementById('muteBtn').textContent=modalVideo.muted?'🔇':'🔊';
-  document.getElementById('volSlider').value=modalVideo.muted?0:modalVideo.volume;
-}
-function setVolume(v){modalVideo.volume=v;modalVideo.muted=(v==0);document.getElementById('muteBtn').textContent=v==0?'🔇':'🔊';}
-function setSpeed(v){modalVideo.playbackRate=parseFloat(v);}
-function toggleFullscreen(){
-  const wrap=document.querySelector('.vid-player-wrap');
-  if(!document.fullscreenElement){wrap.requestFullscreen&&wrap.requestFullscreen();}
-  else{document.exitFullscreen&&document.exitFullscreen();}
+// VIDEO PLAYER — inline, plays in card
+function playVideo(thumb) {
+  var video = thumb.querySelector('video');
+  var poster = thumb.querySelector('.video-poster-img');
+  var playBtn = thumb.querySelector('.play-btn-ref');
+  var notch = thumb.querySelector('.phone-notch');
+  if(poster){poster.style.opacity='0';poster.style.pointerEvents='none';}
+  if(playBtn){playBtn.style.display='none';}
+  if(notch){notch.style.display='none';}
+  thumb.style.cursor='default';
+  thumb.onclick=null;
+  video.setAttribute('controls','controls');
+  video.play();
 }
 
-modalVideo.addEventListener('timeupdate',()=>{
-  if(!modalVideo.duration)return;
-  const pct=(modalVideo.currentTime/modalVideo.duration)*100;
-  progressFill.style.width=pct+'%';
-  progressThumb.style.left=pct+'%';
-  timeDisp.textContent=fmtTime(modalVideo.currentTime)+' / '+fmtTime(modalVideo.duration);
-});
-modalVideo.addEventListener('ended',()=>{playPauseBtn.textContent='▶';});
-
-function seekVideo(e){
-  if(!modalVideo.duration)return;
-  const rect=progressWrap.getBoundingClientRect();
-  const pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));
-  modalVideo.currentTime=pct*modalVideo.duration;
+function playIntro(wrap) {
+  var video = document.getElementById('introVideo');
+  var overlay = document.getElementById('introOverlay');
+  overlay.style.display='none';
+  wrap.onclick=null;
+  wrap.style.cursor='default';
+  video.setAttribute('controls','controls');
+  video.play();
 }
-progressWrap.addEventListener('mousemove',e=>{
-  const rect=progressWrap.getBoundingClientRect();
-  const pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));
-  if(modalVideo.duration){
-    timeTooltip.textContent=fmtTime(pct*modalVideo.duration);
-    timeTooltip.style.left=(pct*100)+'%';
-    timeTooltip.style.display='block';
-  }
-});
-progressWrap.addEventListener('mouseleave',()=>{timeTooltip.style.display='none';});
-
-// Close player on Escape
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closePlayerBtn();});
 </script>
 </body>
 </html>
