@@ -24,8 +24,6 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .nav-ugc{opacity:0.65;font-size:10px;letter-spacing:3px;font-weight:400}
 .pulse{width:8px;height:8px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:pulseAnim 2s infinite}
 @keyframes pulseAnim{0%{box-shadow:0 0 0 0 rgba(74,222,128,0.6)}70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
-
-/* HERO */
 #home{min-height:100vh;display:flex;flex-direction:column;padding:60px 52px 0;background:#2E5F80}
 .home-inner{display:flex;align-items:center;justify-content:center;gap:72px;flex:1;padding-bottom:24px}
 .hero-left{flex:0 0 auto;display:flex;flex-direction:column;gap:12px;max-width:580px}
@@ -57,30 +55,20 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .scroll-arrow-line{font-size:20px;line-height:1;color:rgba(245,240,232,0.9);animation:bounce 1.8s ease-in-out infinite}
 .scroll-arrow-txt{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:1px;color:rgba(245,240,232,0.82);white-space:nowrap}
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
-
-/* HERO RIGHT */
 .hero-right{flex:0 0 auto;display:flex;gap:16px;align-items:flex-start;justify-content:flex-end;position:relative}
-
-/* POSTAGE STAMP */
 .stamp-frame{position:relative;background:white;padding:8px;box-shadow:3px 6px 22px rgba(0,0,0,0.14);outline:2px dashed rgba(88,64,46,0.2);outline-offset:-4px}
 .photo-stamp{transform:rotate(-3.5deg)}
 .video-stamp{transform:rotate(2.5deg)}
 .stamp-inner{width:320px;height:550px;overflow:hidden;background:linear-gradient(145deg,#e0d3c4,#cfc0ae);display:flex;align-items:center;justify-content:center}
 .stamp-inner img{width:100%;height:100%;object-fit:cover;display:block}
-.stamp-ph{font-family:'Special Elite',monospace;font-size:11px;opacity:0.32;text-align:center;padding:10px;line-height:1.7}
-
-/* INTRO VIDEO CARD — mirrors .video-thumb-ref exactly */
 .video-inner{width:320px;height:550px;background:#1C1C19;position:relative;cursor:pointer;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .video-inner video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;display:block}
 .video-inner .video-poster-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;transition:opacity 0.3s}
-.video-inner .v-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;z-index:3;background:rgba(0,0,0,0.15);transition:background 0.2s}
-.video-inner:hover .v-overlay{background:rgba(0,0,0,0.3)}
-.play-btn-ref{width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(245,240,232,0.7);display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);transition:background 0.2s,border-color 0.2s;flex-shrink:0}
-.video-inner:hover .play-btn-ref{background:rgba(0,0,0,0.45);border-color:rgba(245,240,232,1)}
-.play-btn-ref::after{content:'';width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:11px solid rgba(245,240,232,0.9);margin-left:3px}
+.video-inner .v-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;z-index:3}
+.play-btn-hero{width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(245,240,232,0.7);display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);transition:background 0.2s,border-color 0.2s;flex-shrink:0}
+.play-btn-hero::after{content:'';width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:11px solid rgba(245,240,232,0.9);margin-left:3px}
+.video-inner:hover .play-btn-hero{background:rgba(0,0,0,0.45);border-color:rgba(245,240,232,1)}
 .video-cap{font-family:'Special Elite',monospace;font-size:9px;color:var(--cream);opacity:0.6}
-
-/* AIRDROP */
 .airdrop-popup{width:155px;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);border-radius:12px;padding:8px 10px;box-shadow:0 6px 20px rgba(0,0,0,0.18);border:0.5px solid rgba(0,0,0,0.08);transition:opacity 0.4s;position:absolute;bottom:-36px;left:-28px;z-index:20}
 .airdrop-header{display:flex;align-items:center;gap:7px;margin-bottom:7px}
 .airdrop-icon{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#5BC8F5,#2D7DD2);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
@@ -94,14 +82,10 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .airdrop-accept{flex:1;background:#43593B;border:none;border-radius:7px;padding:6px;font-size:11px;font-weight:500;color:white;cursor:pointer}
 .airdrop-msg{text-align:center;padding:6px 2px;font-size:11px;line-height:1.5;color:#444}
 .airdrop-msg strong{color:var(--sage);display:block;margin-bottom:3px;font-size:12px}
-
-/* TICKER */
 .ticker-wrap{overflow:hidden;padding:11px 0;background:var(--butter)}
 .ticker-track{display:flex;white-space:nowrap;will-change:transform}
 .ticker-track span{padding:0 20px;font-family:'Special Elite',monospace;font-size:12px;letter-spacing:2px;color:var(--espresso);flex-shrink:0}
 @keyframes tickerMove{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-/* EXAMPLES */
 #examples{background:var(--cream);padding:60px 56px 52px}
 .section-label{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:3px;opacity:0.4;margin-bottom:16px}
 .gdrive-btn{display:inline-flex;align-items:center;gap:7px;border:1.5px solid rgba(88,64,46,0.3);border-radius:999px;padding:8px 18px;font-family:'Special Elite',monospace;font-size:10px;letter-spacing:1.5px;color:var(--espresso);text-decoration:none;transition:all 0.2s;background:rgba(88,64,46,0.06);white-space:nowrap}
@@ -117,15 +101,13 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .video-thumb-ref video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:8px;z-index:1;display:block}
 .video-poster-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:8px;z-index:2;transition:opacity 0.3s}
 .phone-notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:38px;height:5px;background:rgba(0,0,0,0.2);border-radius:3px;z-index:4}
-.play-btn-ref-card{position:relative;z-index:3;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(245,240,232,0.7);display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);transition:background 0.2s,border-color 0.2s;flex-shrink:0}
-.video-thumb-ref:hover .play-btn-ref-card{background:rgba(0,0,0,0.45);border-color:rgba(245,240,232,1)}
-.play-btn-ref-card::after{content:'';width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:11px solid rgba(245,240,232,0.9);margin-left:3px}
+.play-btn-ref{position:relative;z-index:3;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(245,240,232,0.7);display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);transition:background 0.2s,border-color 0.2s;flex-shrink:0}
+.video-thumb-ref:hover .play-btn-ref{background:rgba(0,0,0,0.45);border-color:rgba(245,240,232,1)}
+.play-btn-ref::after{content:'';width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:11px solid rgba(245,240,232,0.9);margin-left:3px}
 .vid-meta-clean{width:100%;display:flex;flex-direction:column;gap:4px;padding:4px 0}
 .vid-meta-clean .vm-type{font-family:'Special Elite',monospace;font-size:14px;color:var(--espresso);letter-spacing:0.5px;font-weight:600}
 .vid-meta-clean .vm-niche{font-family:'Special Elite',monospace;font-size:12px;color:var(--espresso);letter-spacing:0.5px;opacity:0.6}
 .vc1-bg{background:#2E5F80}.vc2-bg{background:#1C4460}.vc3-bg{background:#3A6E8C}.vc4-bg{background:#254E6A}
-
-/* PHOTOS */
 #photos{padding:56px;background:linear-gradient(150deg,#e4eef5,#dce8f2);scroll-margin-top:0}
 .macos-window{background:#f5f5f0;border-radius:12px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.12);border:0.5px solid rgba(0,0,0,0.1);max-width:860px;margin:0 auto}
 .mac-titlebar{background:#e8e8e3;border-bottom:0.5px solid rgba(0,0,0,0.1);padding:9px 14px;display:flex;align-items:center;gap:7px}
@@ -141,8 +123,6 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .photos-content{background:#f5f5f0;padding:8px}
 .photo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:3px}
 .photo-cell{aspect-ratio:9/16;overflow:hidden;border-radius:2px;background:#e8e4de;cursor:pointer;display:flex;align-items:center;justify-content:center}
-
-/* ABOUT */
 #about{padding:56px;background:linear-gradient(150deg,#fdf5e0,#faf2d8);scroll-margin-top:0}
 .notes-window{background:#faf9f4;border-radius:12px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.1);border:0.5px solid rgba(0,0,0,0.08);max-width:840px;margin:0 auto}
 .notes-titlebar{background:#e8e8e2;border-bottom:0.5px solid rgba(0,0,0,0.09);padding:9px 14px;display:flex;align-items:center;gap:7px}
@@ -168,8 +148,6 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .ap2{background:linear-gradient(145deg,#d0d8c8,#c0c8b8)}
 .ap3{background:linear-gradient(145deg,#c8d0d8,#b8c0c8)}
 .ap4{background:linear-gradient(145deg,#d8c8d0,#c8b8c0)}
-
-/* CONTACT */
 #contact{padding:56px;background:linear-gradient(150deg,#e4eef5,#dce8f2);position:relative;overflow:hidden}
 .contact-pre{text-align:center;margin-bottom:26px}
 .bracket-label{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:3px;opacity:0.4;margin-bottom:8px}
@@ -200,33 +178,23 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .modal-close{background:none;border:none;font-size:15px;cursor:pointer;color:#666;margin-left:auto;padding:2px 7px;border-radius:5px}
 .modal-close:hover{background:rgba(0,0,0,0.08)}
 .modal iframe{flex:1;min-height:520px;border:none}
-
-/* BOTTOM 3 PHOTOS */
 .bottom-photos{display:flex;gap:16px;padding:32px 56px;background:var(--espresso);justify-content:center;align-items:center}
 .bp{flex:0 0 auto;width:160px;aspect-ratio:9/16;border-radius:8px}
 .bp1{background:linear-gradient(145deg,#8a7060,#6d5848)}
 .bp2{background:linear-gradient(145deg,#6a7a68,#506050)}
 .bp3{background:linear-gradient(145deg,#687880,#505860)}
 .bp img{width:100%;height:100%;object-fit:cover;border-radius:8px;display:block}
-
-/* FOOTER */
 footer{background:var(--butter);padding:13px 28px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(88,64,46,0.12)}
 .footer-brand{color:var(--espresso);font-size:12px;font-weight:600;letter-spacing:1px;display:flex;align-items:center;gap:6px}
 .footer-ugc-lbl{opacity:0.6;font-size:10px;letter-spacing:3px;font-weight:400}
 .footer-copy{color:rgba(88,64,46,0.38);font-size:11px}
-
-/* TOAST */
 .toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(70px);background:var(--sage);color:var(--cream);border-radius:999px;padding:11px 22px;font-size:12px;z-index:3000;opacity:0;transition:all 0.35s;pointer-events:none}
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
-
-/* FADE */
 .fade-up{opacity:0;transform:translateY(20px);transition:opacity 0.6s,transform 0.6s}
 .fade-up.visible{opacity:1;transform:translateY(0)}
-
 .mobile-nav-drawer{display:none}
 .nav-hamburger{display:none}
 
-/* ===================== MOBILE ===================== */
 @media(max-width:768px){
   #cursor{display:none}
   nav{top:10px;padding:7px 10px;gap:6px;max-width:calc(100vw - 20px);justify-content:center}
@@ -239,57 +207,26 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
   .mobile-nav-drawer{display:none!important}
   .nav-links{display:flex;gap:0}
   .nav-links a{font-size:9.5px;padding:3px 5px;color:rgba(250,250,242,0.65)}
-
-  /* HERO — tighter layout, no giant gap below frames */
   #home{padding:0;min-height:100svh;flex-direction:column;justify-content:space-between}
-  .home-inner{
-    flex-direction:column-reverse;
-    align-items:center;
-    gap:0;
-    padding:50px 20px 0;
-    flex:1;
-    text-align:center;
-    justify-content:flex-start; /* was flex-end — that was pushing text way down */
-  }
-  .hero-left{
-    flex:none;
-    width:100%;
-    max-width:100%;
-    gap:8px;
-    align-items:center;
-    padding-top:12px; /* was 56px — that was the big gap culprit */
-  }
+  .home-inner{flex-direction:column-reverse;align-items:center;gap:0;padding:50px 20px 0;flex:1;text-align:center;justify-content:flex-end}
+  .hero-left{flex:none;width:100%;max-width:100%;gap:8px;align-items:center;padding-top:28px}
   .headline{font-size:clamp(44px,12vw,62px)}
   .ugc-label{font-size:16px;letter-spacing:5px;margin-top:10px}
   .ugc-dot,.ugc-sub-inline{display:none}
   .ugc-sublabel-mobile{display:block}
   .open-collab{justify-content:center}
-
   .chips-row{flex-direction:row;flex-wrap:wrap;gap:6px;justify-content:center;align-items:flex-start;margin-top:4px}
   .chip{font-size:10px;padding:4px 11px}
   .copy-hint-txt{text-align:center;width:100%}
-
-  /* INFO TABLE — tighter column gap so right col doesn't overflow */
-  .info-table{
-    grid-template-columns:auto auto;
-    gap:10px 10px; /* was 52px — tightened so cols sit close together */
-    width:100%!important;
-    text-align:left;
-    margin-top:8px;
-    padding:10px 10px;
-  }
+  .info-table{grid-template-columns:auto auto;gap:10px 10px;width:100%!important;text-align:left;margin-top:8px;padding:10px 10px}
   .it-vals li{font-size:9.5px;white-space:nowrap}
   .it-label{font-size:7.5px}
-
   .niches{justify-content:center;gap:5px;margin-top:10px}
   .scroll-arrow-wrap{justify-content:center;margin-top:2px}
   .scroll-arrow{margin-left:0;justify-content:center;width:auto}
-
-  /* Frames */
   .hero-right{width:100%;justify-content:center;padding:20px 0 8px;gap:14px;flex-direction:row;align-items:flex-start}
   .stamp-inner{width:148px;height:263px}
   .video-inner{width:148px;height:263px}
-
   .airdrop-popup{width:90px;bottom:-32px;left:-8px;padding:4px 5px;border-radius:7px}
   .airdrop-header{margin-bottom:3px;gap:4px}
   .airdrop-icon{width:13px!important;height:13px!important;font-size:6px!important;border-radius:3px!important;flex-shrink:0}
@@ -300,21 +237,17 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
   .airdrop-file-size{display:none!important}
   .airdrop-btns{gap:2px}
   .airdrop-decline,.airdrop-accept{font-size:7px!important;padding:2px 3px!important;border-radius:3px!important}
-
   .ticker-wrap{margin:0!important}
-
   #videos{padding:44px 18px 36px!important}
   .video-grid4{grid-template-columns:repeat(2,1fr);gap:10px}
   .vid-meta-clean .vm-type{font-size:11px}
   .gdrive-btn{font-size:9px;padding:6px 12px}
-
   #photos{padding:40px 16px}
   .macos-window{max-width:100%;border-radius:10px}
   .mac-titlebar{padding:8px 12px}
   .photos-topbar{padding:5px 10px}
   .photo-grid{grid-template-columns:repeat(5,1fr)!important}
   .photos-content{padding:4px;height:auto;overflow:visible}
-
   #about{padding:40px 16px}
   .notes-window{max-width:100%;border-radius:10px}
   .notes-body{flex-direction:row;min-height:0}
@@ -333,17 +266,14 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
   .about-photo{aspect-ratio:2/3}
   .work-chips{gap:3px;margin-bottom:8px}
   .work-chip{font-size:8px;padding:2px 7px}
-
   #contact{padding:44px 18px 36px}
   .contact-email-big{font-size:16px;word-break:break-all}
   .imsg-win{width:100%}
   .bubble{max-width:85%;font-size:11px}
-
   .bottom-photos{padding:20px 16px;gap:8px}
   .bp{width:90px}
   footer{padding:12px 18px}
 }
-
 @media(max-width:390px){
   .headline{font-size:36px}
   .info-table{gap:8px 8px;padding:8px 8px}
@@ -355,30 +285,15 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
 </style>
 </head>
 <body>
-
-<div id="cursor">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-    <path id="cursor-path" d="M12 2V22M2 12H22M5.5 5.5L18.5 18.5M18.5 5.5L5.5 18.5" stroke="#58402E" stroke-width="2.8" stroke-linecap="round"/>
-  </svg>
-</div>
-
+<div id="cursor"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path id="cursor-path" d="M12 2V22M2 12H22M5.5 5.5L18.5 18.5M18.5 5.5L5.5 18.5" stroke="#58402E" stroke-width="2.8" stroke-linecap="round"/></svg></div>
 <nav id="navbar">
-  <div class="nav-dots">
-    <div class="nav-dot" style="background:#FF5F57"></div>
-    <div class="nav-dot" style="background:#FFBD2E"></div>
-    <div class="nav-dot" style="background:#28C840"></div>
-  </div>
+  <div class="nav-dots"><div class="nav-dot" style="background:#FF5F57"></div><div class="nav-dot" style="background:#FFBD2E"></div><div class="nav-dot" style="background:#28C840"></div></div>
   <div class="nav-url">💌 yan.tran.ugc@gmail.com</div>
   <div class="nav-links">
-    <a href="#home" class="active">Home</a>
-    <a href="#videos">Videos</a>
-    <a href="#photos">Photos</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="#home" class="active">Home</a><a href="#videos">Videos</a><a href="#photos">Photos</a><a href="#about">About</a><a href="#contact">Contact</a>
   </div>
   <div class="nav-logo">YAN <div class="pulse"></div> <span class="nav-ugc">UGC</span></div>
 </nav>
-
 <div class="mobile-nav-drawer" id="mobileNavDrawer">
   <button class="mobile-nav-close" onclick="closeMobileNav()">✕</button>
   <a href="#home" onclick="closeMobileNav();navScrollTo('home')">Home</a>
@@ -387,8 +302,6 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
   <a href="#about" onclick="closeMobileNav();navScrollTo('about')">About</a>
   <a href="#contact" onclick="closeMobileNav();navScrollTo('contact')">Contact</a>
 </div>
-
-<!-- HERO -->
 <section id="home">
   <div class="home-inner">
     <div class="hero-left fade-up">
@@ -438,7 +351,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         </div>
       </div>
       <div class="niches">
-        <span class="niche-tag">Tech & Apps</span>
+        <span class="niche-tag">Tech &amp; Apps</span>
         <span class="niche-tag">Travel</span>
         <span class="niche-tag">Lifestyle</span>
         <span class="niche-tag">Finance</span>
@@ -450,16 +363,11 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         </div>
       </div>
     </div>
-
     <div class="hero-right fade-up" style="transition-delay:0.15s">
       <div style="display:flex;gap:16px;align-items:flex-start">
-
-        <!-- Photo stamp with AirDrop -->
         <div style="position:relative">
           <div class="stamp-frame photo-stamp">
-            <div class="stamp-inner">
-              <img src="images/profile_pic.webp" alt="Yan">
-            </div>
+            <div class="stamp-inner"><img src="images/profile_pic.webp" alt="Yan"></div>
           </div>
           <div class="airdrop-popup" id="airdrop-popup">
             <div class="airdrop-header">
@@ -476,26 +384,21 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
             </div>
           </div>
         </div>
-
-        <!-- Intro video stamp — uses same inline playVideo() pattern as portfolio cards -->
         <div class="stamp-frame video-stamp">
-          <div class="video-inner" id="introThumb" onclick="playVideo(this)">
+          <div class="video-inner" onclick="playIntroVideo(this)">
             <video src="videos/intro.mp4" poster="images/intro.png" playsinline preload="none"></video>
-            <img class="video-poster-img" src="images/intro.png" alt="Intro cover">
+            <img class="video-poster-img" src="images/intro.png" alt="Intro">
             <div class="v-overlay">
-              <div class="play-btn-ref"></div>
+              <div class="play-btn-hero"></div>
               <span class="video-cap">intro</span>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
   <div class="ticker-wrap" style="margin:0 -72px"><div class="ticker-track" id="ticker-track"></div></div>
 </section>
-
-<!-- EXAMPLES -->
 <section id="examples" style="padding:0">
   <div id="videos" style="background:#f5f0e8;padding:60px 72px 52px;scroll-margin-top:0">
     <div class="section-label">[ my work ]</div>
@@ -507,76 +410,49 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
       </a>
     </div>
     <div class="video-grid4">
-
-      <!-- Card 1: Airalo -->
       <div class="vid-card-wrap">
         <div class="video-logo"><img src="images/airalo-logo.png" alt="Airalo"></div>
         <div class="video-thumb-ref vc1-bg" onclick="playVideo(this)">
           <div class="phone-notch"></div>
           <img class="video-poster-img" src="images/airalo-cover.png" alt="Airalo cover">
           <video src="videos/airalo.mp4" playsinline></video>
-          <div class="play-btn-ref-card"></div>
+          <div class="play-btn-ref"></div>
         </div>
-        <div class="vid-meta-clean">
-          <span class="vm-paid-tag">Paid</span>
-          <span class="vm-type">Product Demo</span>
-          <span class="vm-niche">Travel · Apps</span>
-        </div>
+        <div class="vid-meta-clean"><span class="vm-paid-tag">Paid</span><span class="vm-type">Product Demo</span><span class="vm-niche">Travel · Apps</span></div>
       </div>
-
-      <!-- Card 2: Wise -->
       <div class="vid-card-wrap">
         <div class="video-logo"><img src="images/wise-logo.png" alt="Wise"></div>
         <div class="video-thumb-ref vc2-bg" onclick="playVideo(this)">
           <div class="phone-notch"></div>
           <img class="video-poster-img" src="images/wise-cover.png" alt="Wise cover">
           <video src="videos/wise.mp4" playsinline></video>
-          <div class="play-btn-ref-card"></div>
+          <div class="play-btn-ref"></div>
         </div>
-        <div class="vid-meta-clean">
-          <span class="vm-paid-tag">Paid</span>
-          <span class="vm-type">Problem/Solution</span>
-          <span class="vm-niche">Finance · Travel</span>
-        </div>
+        <div class="vid-meta-clean"><span class="vm-paid-tag">Paid</span><span class="vm-type">Problem/Solution</span><span class="vm-niche">Finance · Travel</span></div>
       </div>
-
-      <!-- Card 3: DoorDash -->
       <div class="vid-card-wrap">
         <div class="video-logo"><img src="images/doordash-logo.png" alt="DoorDash"></div>
         <div class="video-thumb-ref vc3-bg" onclick="playVideo(this)">
           <div class="phone-notch"></div>
           <img class="video-poster-img" src="images/doordash-cover.png" alt="DoorDash cover">
           <video src="videos/doordash.mp4" playsinline></video>
-          <div class="play-btn-ref-card"></div>
+          <div class="play-btn-ref"></div>
         </div>
-        <div class="vid-meta-clean">
-          <span class="vm-organic-tag">Organic</span>
-          <span class="vm-type">Humor</span>
-          <span class="vm-niche">Apps</span>
-        </div>
+        <div class="vid-meta-clean"><span class="vm-organic-tag">Organic</span><span class="vm-type">Humor</span><span class="vm-niche">Apps</span></div>
       </div>
-
-      <!-- Card 4: Fujifilm -->
       <div class="vid-card-wrap">
         <div class="video-logo"><img src="images/fujifilm-logo.png" alt="Fujifilm"></div>
         <div class="video-thumb-ref vc4-bg" onclick="playVideo(this)">
           <div class="phone-notch"></div>
           <img class="video-poster-img" src="images/fujifilm-cover.png" alt="Fujifilm cover">
           <video src="videos/fujifilm.mp4" playsinline></video>
-          <div class="play-btn-ref-card"></div>
+          <div class="play-btn-ref"></div>
         </div>
-        <div class="vid-meta-clean">
-          <span class="vm-organic-tag">Organic</span>
-          <span class="vm-type">POV</span>
-          <span class="vm-niche">Lifestyle</span>
-        </div>
+        <div class="vid-meta-clean"><span class="vm-organic-tag">Organic</span><span class="vm-type">POV</span><span class="vm-niche">Lifestyle</span></div>
       </div>
-
     </div>
   </div>
 </section>
-
-<!-- PHOTOS -->
 <section id="photos">
   <div class="section-label">[ still shots ]</div>
   <div style="font-family:'Abril Fatface',serif;font-size:22px;color:var(--espresso);margin-bottom:16px">Photography</div>
@@ -585,10 +461,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
       <div class="mac-dots"><div class="mac-dot" style="background:#FF5F57"></div><div class="mac-dot" style="background:#FFBD2E"></div><div class="mac-dot" style="background:#28C840"></div></div>
       <div class="mac-label">Photos</div><div class="mac-crumb"> · Recents</div>
     </div>
-    <div class="photos-topbar">
-      <span class="zoom-label">🔍</span>
-      <input type="range" class="zoom-slider" id="zoom-slider" min="2" max="6" value="3">
-    </div>
+    <div class="photos-topbar"><span class="zoom-label">🔍</span><input type="range" class="zoom-slider" id="zoom-slider" min="2" max="6" value="3"></div>
     <div class="photos-body">
       <div class="photos-content">
         <div class="photo-grid" id="photo-grid">
@@ -607,8 +480,6 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
     </div>
   </div>
 </section>
-
-<!-- ABOUT -->
 <section id="about">
   <div class="section-label">[ about ]</div>
   <div style="font-family:'Abril Fatface',serif;font-size:22px;color:var(--espresso);margin-bottom:16px">Why Me?</div>
@@ -647,8 +518,6 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
     </div>
   </div>
 </section>
-
-<!-- CONTACT -->
 <section id="contact" style="position:relative;overflow:hidden">
   <div class="contact-pre fade-up">
     <div class="bracket-label">[ get in touch ]</div>
@@ -659,36 +528,25 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
   <div class="imsg-win fade-up" style="transition-delay:0.12s">
     <div class="imsg-tb">
       <div class="mac-dots"><div class="mac-dot" style="background:#FF5F57"></div><div class="mac-dot" style="background:#FFBD2E"></div><div class="mac-dot" style="background:#28C840"></div></div>
-      <div class="imsg-ctr">
-        <div class="imsg-av">Y</div>
-        <div class="imsg-name">Yan</div>
-      </div>
+      <div class="imsg-ctr"><div class="imsg-av">Y</div><div class="imsg-name">Yan</div></div>
     </div>
     <div class="imsg-body">
       <div class="imsg-row"><div class="imsg-avsm">Y</div><div class="bubble bl">Hey! 👋 Contact me at <a href="mailto:yan.tran.ugc@gmail.com">yan.tran.ugc@gmail.com</a></div></div>
       <div class="imsg-row"><div class="imsg-avsm">Y</div><div class="bubble bl">Or fill out my form below!</div></div>
       <div class="imsg-row r"><div class="bubble br">Great! Talk soon! 🤝</div></div>
     </div>
-    <div class="form-btn-row">
-      <button class="btn-form" onclick="openForm()">Fill Out My Form →</button>
-    </div>
+    <div class="form-btn-row"><button class="btn-form" onclick="openForm()">Fill Out My Form →</button></div>
   </div>
 </section>
-
-<!-- BOTTOM 3 PHOTOS -->
 <div class="bottom-photos">
   <div class="bp bp1"><img src="images/footer1.jpg" alt="Footer 1"></div>
   <div class="bp bp2"><img src="images/footer2.jpg" alt="Footer 2"></div>
   <div class="bp bp3"><img src="images/footer3.jpg" alt="Footer 3"></div>
 </div>
-
-<!-- FOOTER -->
 <footer>
   <div class="footer-brand">YAN <div class="pulse"></div> <span class="footer-ugc-lbl">UGC</span></div>
   <div class="footer-copy">© 2025</div>
 </footer>
-
-<!-- GOOGLE FORM MODAL -->
 <div class="modal-bd" id="form-modal" onclick="closeBackdrop(event)">
   <div class="modal">
     <div class="modal-hdr">
@@ -699,140 +557,53 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfjW5tRiwJ2z75v_N-AwM3vvAYi7X6UITsqDToIEkj62q-vZA/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </div>
 </div>
-
 <div class="toast" id="toast">📋 Email copied!</div>
-
 <script>
-function navScrollTo(id){
-  setTimeout(()=>{
-    const el=document.getElementById(id);
-    if(!el)return;
-    if(id==='contact'){
-      const top=el.offsetTop-Math.max(0,(window.innerHeight-el.offsetHeight)/2);
-      window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
-    }else{
-      window.scrollTo({top:el.offsetTop,behavior:'smooth'});
-    }
-  },50);
-}
-
+function navScrollTo(id){setTimeout(()=>{const el=document.getElementById(id);if(!el)return;if(id==='contact'){const top=el.offsetTop-Math.max(0,(window.innerHeight-el.offsetHeight)/2);window.scrollTo({top:Math.max(0,top),behavior:'smooth'});}else{window.scrollTo({top:el.offsetTop,behavior:'smooth'});}},50);}
 function openMobileNav(){document.getElementById('mobileNavDrawer').classList.add('open')}
 function closeMobileNav(){document.getElementById('mobileNavDrawer').classList.remove('open')}
-
-document.querySelectorAll('.nav-links a').forEach(a=>{
-  a.addEventListener('click',function(e){
-    const href=this.getAttribute('href');
-    if(!href||!href.startsWith('#'))return;
-    const target=document.getElementById(href.slice(1));
-    if(!target)return;
-    e.preventDefault();
-    if(href==='#contact'){
-      const top=target.offsetTop-Math.max(0,(window.innerHeight-target.offsetHeight)/2);
-      window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
-    }else{
-      window.scrollTo({top:target.offsetTop,behavior:'smooth'});
-    }
-  });
-});
-
-// Cursor
+document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',function(e){const href=this.getAttribute('href');if(!href||!href.startsWith('#'))return;const target=document.getElementById(href.slice(1));if(!target)return;e.preventDefault();if(href==='#contact'){const top=target.offsetTop-Math.max(0,(window.innerHeight-target.offsetHeight)/2);window.scrollTo({top:Math.max(0,top),behavior:'smooth'});}else{window.scrollTo({top:target.offsetTop,behavior:'smooth'});}});});
 const cp=document.getElementById('cursor-path');
 let mx=0,my=0,cx=0,cy=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
 (function aC(){cx+=(mx-cx)*0.13;cy+=(my-cy)*0.13;const c=document.getElementById('cursor');c.style.left=cx+'px';c.style.top=cy+'px';requestAnimationFrame(aC)})();
-window.addEventListener('scroll',()=>{
-  const bp=document.querySelector('.bottom-photos');
-  cp.setAttribute('stroke',bp&&window.scrollY>=bp.offsetTop-60?'#F2D17E':'#58402E');
-});
-
-// Nav active
-window.addEventListener('scroll',()=>{
-  const ids=['home','videos','photos','about','contact'];
-  let cur='home';
-  ids.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-140)cur=id;});
-  document.querySelectorAll('.nav-links a').forEach(a=>{
-    a.classList.toggle('active',(a.getAttribute('href')==='#'+cur));
-  });
-});
-
-// Headline bounce letters
-(function(){
-  const el=document.getElementById('hero-headline');
-  const text="hi, i'm Yan.";
-  const yanIdx=text.indexOf('Y');
-  let h='';
-  for(let i=0;i<text.length;i++){
-    const c=text[i],isY=i>=yanIdx;
-    const cls='letter'+(isY?' yan-word':'');
-    h+=c===' '?`<span class="${cls}" style="display:inline-block">&nbsp;</span>`:`<span class="${cls}">${c}</span>`;
-  }
-  el.innerHTML=h;
-})();
-
-// Ticker
-(function(){
-  const words=['TECH & APPS','TRAVEL','LIFESTYLE','FINANCE'];
-  let html='';
-  for(let r=0;r<6;r++) words.forEach(w=>{html+=`<span>${w}</span><span>✳</span>`;});
-  const track=document.getElementById('ticker-track');
-  track.innerHTML=html;
-  requestAnimationFrame(()=>{
-    const half=track.scrollWidth/2;
-    const dur=(half/55).toFixed(1);
-    track.style.animation=`tickerMove ${dur}s linear infinite`;
-  });
-})();
-
-// Copy email
-function copyEmailChip(){
-  navigator.clipboard.writeText('yan.tran.ugc@gmail.com').then(()=>{
-    const chip=document.getElementById('email-chip');
-    const orig=chip.innerHTML;
-    chip.innerHTML='✓ Copied!';
-    chip.style.background='var(--sage)';
-    chip.style.color='var(--cream)';
-    showToast();
-    setTimeout(()=>{chip.innerHTML=orig;chip.style.background='var(--butter)';chip.style.color='';},2200);
-  }).catch(showToast);
-}
+window.addEventListener('scroll',()=>{const bp=document.querySelector('.bottom-photos');cp.setAttribute('stroke',bp&&window.scrollY>=bp.offsetTop-60?'#F2D17E':'#58402E');});
+window.addEventListener('scroll',()=>{const ids=['home','videos','photos','about','contact'];let cur='home';ids.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-140)cur=id;});document.querySelectorAll('.nav-links a').forEach(a=>{a.classList.toggle('active',(a.getAttribute('href')==='#'+cur));});});
+(function(){const el=document.getElementById('hero-headline');const text="hi, i'm Yan.";const yanIdx=text.indexOf('Y');let h='';for(let i=0;i<text.length;i++){const c=text[i],isY=i>=yanIdx;const cls='letter'+(isY?' yan-word':'');h+=c===' '?`<span class="${cls}" style="display:inline-block">&nbsp;</span>`:`<span class="${cls}">${c}</span>`;}el.innerHTML=h;})();
+(function(){const words=['TECH & APPS','TRAVEL','LIFESTYLE','FINANCE'];let html='';for(let r=0;r<6;r++)words.forEach(w=>{html+=`<span>${w}</span><span>✳</span>`;});const track=document.getElementById('ticker-track');track.innerHTML=html;requestAnimationFrame(()=>{const half=track.scrollWidth/2;const dur=(half/55).toFixed(1);track.style.animation=`tickerMove ${dur}s linear infinite`;});})();
+function copyEmailChip(){navigator.clipboard.writeText('yan.tran.ugc@gmail.com').then(()=>{const chip=document.getElementById('email-chip');const orig=chip.innerHTML;chip.innerHTML='✓ Copied!';chip.style.background='var(--sage)';chip.style.color='var(--cream)';showToast();setTimeout(()=>{chip.innerHTML=orig;chip.style.background='var(--butter)';chip.style.color='';},2200);}).catch(showToast);}
 function copyEmail(){navigator.clipboard.writeText('yan.tran.ugc@gmail.com').then(showToast).catch(showToast);}
 function showToast(){const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400);}
-
-// AirDrop
-function declineAirdrop(){
-  document.getElementById('airdrop-popup').innerHTML=`<div class="airdrop-msg"><strong>Just kidding 😅</strong>Try accepting this time!</div><div class="airdrop-btns" style="margin-top:8px"><button class="airdrop-decline" onclick="declineAgain()">Decline</button><button class="airdrop-accept" onclick="acceptAirdrop()">Accept</button></div>`;
-}
-function declineAgain(){
-  document.getElementById('airdrop-popup').innerHTML=`<div class="airdrop-msg"><strong>Really? 😂</strong>One more chance...</div><div class="airdrop-btns" style="margin-top:8px"><button class="airdrop-decline" style="opacity:0.4" disabled>Decline</button><button class="airdrop-accept" onclick="acceptAirdrop()">Accept</button></div>`;
-}
-function acceptAirdrop(){
-  document.getElementById('airdrop-popup').innerHTML=`<div class="airdrop-msg"><strong>Welcome! 🎉</strong>Glad you're here!</div>`;
-}
-
-// Form modal
+function declineAirdrop(){document.getElementById('airdrop-popup').innerHTML=`<div class="airdrop-msg"><strong>Just kidding 😅</strong>Try accepting this time!</div><div class="airdrop-btns" style="margin-top:8px"><button class="airdrop-decline" onclick="declineAgain()">Decline</button><button class="airdrop-accept" onclick="acceptAirdrop()">Accept</button></div>`;}
+function declineAgain(){document.getElementById('airdrop-popup').innerHTML=`<div class="airdrop-msg"><strong>Really? 😂</strong>One more chance...</div><div class="airdrop-btns" style="margin-top:8px"><button class="airdrop-decline" style="opacity:0.4" disabled>Decline</button><button class="airdrop-accept" onclick="acceptAirdrop()">Accept</button></div>`;}
+function acceptAirdrop(){document.getElementById('airdrop-popup').innerHTML=`<div class="airdrop-msg"><strong>Welcome! 🎉</strong>Glad you're here!</div>`;}
 function openForm(){document.getElementById('form-modal').classList.add('open');}
 function closeForm(){document.getElementById('form-modal').classList.remove('open');}
 function closeBackdrop(e){if(e.target===document.getElementById('form-modal'))closeForm();}
-
-// Fade on scroll
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.07});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 setTimeout(()=>document.querySelectorAll('.fade-up').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible');}),80);
-
-// VIDEO PLAYER — same function for both intro and portfolio cards
-// Hides poster, removes play btn, hands off to native controls
 function playVideo(thumb){
   var video=thumb.querySelector('video');
   var poster=thumb.querySelector('.video-poster-img');
-  var playBtnCard=thumb.querySelector('.play-btn-ref-card');
-  var overlay=thumb.querySelector('.v-overlay');
+  var playBtn=thumb.querySelector('.play-btn-ref');
   var notch=thumb.querySelector('.phone-notch');
   if(poster){poster.style.opacity='0';poster.style.pointerEvents='none';}
-  if(playBtnCard){playBtnCard.style.display='none';}
-  if(overlay){overlay.style.display='none';}
+  if(playBtn){playBtn.style.display='none';}
   if(notch){notch.style.display='none';}
   thumb.style.cursor='default';
   thumb.onclick=null;
+  video.setAttribute('controls','controls');
+  video.play();
+}
+function playIntroVideo(wrap){
+  var video=wrap.querySelector('video');
+  var poster=wrap.querySelector('.video-poster-img');
+  var overlay=wrap.querySelector('.v-overlay');
+  if(poster){poster.style.opacity='0';poster.style.pointerEvents='none';}
+  if(overlay){overlay.style.display='none';}
+  wrap.style.cursor='default';
+  wrap.onclick=null;
   video.setAttribute('controls','controls');
   video.play();
 }
