@@ -25,7 +25,7 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .pulse{width:8px;height:8px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:pulseAnim 2s infinite}
 @keyframes pulseAnim{0%{box-shadow:0 0 0 0 rgba(74,222,128,0.6)}70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
 #home{min-height:100vh;display:flex;flex-direction:column;padding:60px 52px 0;background:#2E5F80}
-.home-inner{display:flex;align-items:center;justify-content:center;gap:72px;flex:1;padding-bottom:56px}
+.home-inner{display:flex;align-items:center;justify-content:center;gap:72px;flex:1;padding-bottom:80px}
 .hero-left{flex:0 0 auto;display:flex;flex-direction:column;gap:12px;max-width:580px}
 .open-collab{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#9ECFE4}
 .oc-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:pulseAnim 2s infinite}
@@ -385,10 +385,9 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           </div>
         </div>
         <div class="stamp-frame video-stamp">
-          <div class="video-inner" onclick="playIntroVideo(this)">
-            <video src="videos/intro.mp4" poster="images/intro.png" playsinline preload="none"></video>
-            <img class="video-poster-img" src="images/intro.png" alt="Intro">
-            <div class="v-overlay">
+          <div class="video-inner" id="introWrap" onclick="toggleIntro()">
+            <video id="introVid" src="videos/intro.mp4" poster="images/intro.png" playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;display:block"></video>
+            <div id="introPlay" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;z-index:3;pointer-events:none">
               <div class="play-btn-hero"></div>
               <span class="video-cap">intro</span>
             </div>
@@ -596,16 +595,11 @@ function playVideo(thumb){
   video.setAttribute('controls','controls');
   video.play();
 }
-function playIntroVideo(wrap){
-  var video=wrap.querySelector('video');
-  var poster=wrap.querySelector('.video-poster-img');
-  var overlay=wrap.querySelector('.v-overlay');
-  if(poster){poster.style.opacity='0';poster.style.pointerEvents='none';}
-  if(overlay){overlay.style.display='none';}
-  wrap.style.cursor='default';
-  wrap.onclick=null;
-  video.setAttribute('controls','controls');
-  video.play();
+function toggleIntro(){
+  var vid=document.getElementById('introVid');
+  var play=document.getElementById('introPlay');
+  if(vid.paused){vid.play();play.style.display='none';}
+  else{vid.pause();play.style.display='flex';}
 }
 </script>
 </body>
