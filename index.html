@@ -7,12 +7,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans:wght@300;400;500&family=Special+Elite&family=Fraunces:ital,wght@1,400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--sage:#43593B;--sky:#7CC1E7;--butter:#F2D17E;--cream:#FAFAF2;--espresso:#58402E;--coral:#C4622D}
+:root{--sage:#43593B;--sky:#7CC1E7;--butter:#F2D17E;--cream:#FAFAF2;--espresso:#58402E;--coral:#C4622D;--hero-blue:#3A6E8C}
 html{scroll-behavior:smooth;scroll-padding-top:0}
 body{background:var(--cream);color:var(--espresso);font-family:'DM Sans',sans-serif;cursor:none;overflow-x:hidden}
 #cursor{position:fixed;pointer-events:none;z-index:9999;width:24px;height:24px;transform:translate(-50%,-50%)}
 #cursor svg{display:block}
 #cursor-path{stroke:#58402E;transition:stroke 0.3s}
+
+/* NAV */
 nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;background:rgba(88,64,46,0.93);backdrop-filter:blur(14px);border-radius:999px;padding:9px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 4px 28px rgba(0,0,0,0.18);white-space:nowrap}
 .nav-dots{display:flex;gap:5px;flex-shrink:0}
 .nav-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
@@ -24,9 +26,11 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .nav-ugc{opacity:0.65;font-size:10px;letter-spacing:3px;font-weight:400}
 .pulse{width:8px;height:8px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:pulseAnim 2s infinite}
 @keyframes pulseAnim{0%{box-shadow:0 0 0 0 rgba(74,222,128,0.6)}70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
-#home{min-height:100vh;display:flex;flex-direction:column;padding:60px 52px 0;background:#2E5F80}
-.home-inner{display:flex;align-items:center;justify-content:center;gap:72px;flex:1;padding-bottom:80px}
-.hero-left{flex:0 0 auto;display:flex;flex-direction:column;gap:12px;max-width:580px}
+
+/* HERO */
+#home{min-height:100vh;display:flex;flex-direction:column;padding:60px 52px 0;background:var(--hero-blue)}
+.home-inner{display:flex;align-items:center;justify-content:center;gap:72px;flex:1;padding-bottom:40px}
+.hero-left{flex:0 0 auto;display:flex;flex-direction:column;gap:16px;max-width:580px}
 .open-collab{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#9ECFE4}
 .oc-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:pulseAnim 2s infinite}
 .headline{font-family:'Abril Fatface',serif;font-size:clamp(60px,7.5vw,105px);line-height:1.05;color:#F5F0E8}
@@ -38,23 +42,32 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .ugc-sub-inline{font-size:11px;letter-spacing:3px;color:rgba(158,207,228,0.55);font-family:'DM Sans',sans-serif;text-transform:uppercase}
 .ugc-sublabel{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(158,207,228,0.55);margin-top:2px}
 .ugc-sublabel-mobile{display:none}
-.chips-row{display:flex;gap:7px;flex-wrap:wrap;align-items:flex-start}
+.ugc-sub-inline{font-size:13px!important;letter-spacing:2px!important;color:rgba(158,207,228,0.85)!important;font-weight:600!important}
+
+/* Subtle email watermark */
+.section-email-wm{position:absolute;top:18px;right:24px;font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:0.2px;text-decoration:none;transition:color 0.2s;z-index:10;white-space:nowrap;font-weight:500}
+.wm-dark{color:rgba(88,64,46,0.72)}.wm-dark:hover{color:rgba(88,64,46,1)}
+.wm-light{color:rgba(245,240,232,0.6)}.wm-light:hover{color:rgba(245,240,232,1)}
+
+/* Hero info stack */
+.hero-info-stack{display:flex;flex-direction:column;gap:8px;margin-top:8px;align-items:flex-start}
+.hero-info-line{font-family:'DM Sans',sans-serif;font-size:clamp(14px,1.45vw,19px);color:rgba(245,240,232,0.9);letter-spacing:0.2px;line-height:1.35;font-weight:300;display:flex;align-items:center;gap:10px}
+.hero-info-line::before{content:'•';font-size:16px;color:rgba(245,240,232,0.7);line-height:1;flex-shrink:0}
+.hero-info-sep{color:rgba(158,207,228,0.55);margin:0 6px;font-weight:300}
+
+/* Email bubble */
+.email-center-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin-top:10px}
 .chip{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:5px 13px;font-size:11px;color:rgba(245,240,232,0.85)}
-.email-chip{background:var(--butter)!important;border-color:rgba(88,64,46,0.25)!important;cursor:pointer;font-weight:500;color:var(--espresso)!important;transition:all 0.2s}
+.email-chip{background:var(--butter)!important;border-color:rgba(88,64,46,0.25)!important;cursor:pointer;font-weight:500;color:var(--espresso)!important;transition:all 0.2s;text-decoration:none;font-size:13px;padding:8px 18px}
 .email-chip:hover{background:#edc960!important}
-.copy-hint-txt{font-size:11px;font-family:'Special Elite',monospace;letter-spacing:1px;color:rgba(158,207,228,0.75);padding-left:2px}
-.info-table{display:grid;grid-template-columns:repeat(2,auto);gap:10px 28px;font-size:11px;padding:11px 14px;background:rgba(0,0,0,0.18);border-radius:10px;border-left:3px solid var(--butter);width:fit-content}
-.it-label{font-family:'Special Elite',monospace;font-size:8px;letter-spacing:2px;color:#9ECFE4;text-transform:uppercase;padding-bottom:3px}
-.it-vals{line-height:1.8;color:rgba(245,240,232,0.72)}
-.it-vals li{list-style:disc;margin-left:14px;font-size:11px}
-.niches{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.niche-tag{background:rgba(158,207,228,0.25);color:#d4edf8;border:1px solid rgba(158,207,228,0.55);border-radius:999px;padding:5px 14px;font-size:11px;font-weight:600;letter-spacing:0.3px}
-.scroll-arrow-wrap{display:flex;justify-content:flex-start;padding-left:2px;margin-top:4px}
-.scroll-arrow{display:inline-flex;flex-direction:row;align-items:center;gap:5px;cursor:pointer;opacity:0.6;transition:opacity 0.2s}
-.scroll-arrow:hover{opacity:0.95}
-.scroll-arrow-line{font-size:20px;line-height:1;color:rgba(245,240,232,0.9);animation:bounce 1.8s ease-in-out infinite}
-.scroll-arrow-txt{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:1px;color:rgba(245,240,232,0.82);white-space:nowrap}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+/* ticker */
+.ticker-wrap{overflow:hidden;padding:11px 0;background:var(--butter)}
+.ticker-track{display:flex;white-space:nowrap;will-change:transform}
+.ticker-track span{padding:0 20px;font-family:'Special Elite',monospace;font-size:12px;letter-spacing:2px;color:var(--espresso);flex-shrink:0}
+@keyframes tickerMove{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* Hero right — polaroid + video */
 .hero-right{flex:0 0 auto;display:flex;gap:16px;align-items:flex-start;justify-content:flex-end;position:relative}
 .stamp-frame{position:relative;background:white;padding:8px;box-shadow:3px 6px 22px rgba(0,0,0,0.14);outline:2px dashed rgba(88,64,46,0.2);outline-offset:-4px}
 .photo-stamp{transform:rotate(-3.5deg)}
@@ -69,32 +82,35 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .play-btn-hero::after{content:'';width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:11px solid rgba(245,240,232,0.9);margin-left:3px}
 .video-inner:hover .play-btn-hero{background:rgba(0,0,0,0.45);border-color:rgba(245,240,232,1)}
 .video-cap{font-family:'Special Elite',monospace;font-size:9px;color:var(--cream);opacity:0.6}
-.airdrop-popup{width:155px;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);border-radius:12px;padding:8px 10px;box-shadow:0 6px 20px rgba(0,0,0,0.18);border:0.5px solid rgba(0,0,0,0.08);transition:opacity 0.4s;position:absolute;bottom:-36px;left:-28px;z-index:20}
-.airdrop-header{display:flex;align-items:center;gap:7px;margin-bottom:7px}
-.airdrop-icon{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#5BC8F5,#2D7DD2);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
-.airdrop-title{font-size:11px;font-weight:700;color:#1a1a1a}
-.airdrop-sub{font-size:10px;color:#888}
-.airdrop-file{display:flex;align-items:center;gap:6px;background:rgba(0,0,0,0.04);border-radius:7px;padding:6px 8px;margin-bottom:9px}
-.airdrop-file-name{font-size:10px;font-weight:600;color:#1a1a1a}
-.airdrop-file-size{font-size:9px;color:#888}
-.airdrop-btns{display:flex;gap:6px}
-.airdrop-decline{flex:1;background:rgba(0,0,0,0.07);border:none;border-radius:7px;padding:6px;font-size:11px;font-weight:500;color:#333;cursor:pointer}
-.airdrop-accept{flex:1;background:#43593B;border:none;border-radius:7px;padding:6px;font-size:11px;font-weight:500;color:white;cursor:pointer}
-.airdrop-msg{text-align:center;padding:6px 2px;font-size:11px;line-height:1.5;color:#444}
-.airdrop-msg strong{color:var(--sage);display:block;margin-bottom:3px;font-size:12px}
-.ticker-wrap{overflow:hidden;padding:11px 0;background:var(--butter)}
-.ticker-track{display:flex;white-space:nowrap;will-change:transform}
-.ticker-track span{padding:0 20px;font-family:'Special Elite',monospace;font-size:12px;letter-spacing:2px;color:var(--espresso);flex-shrink:0}
-@keyframes tickerMove{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-#examples{background:var(--cream);padding:60px 56px 52px}
+
+/* EXAMPLES SECTION with slides */
+#examples{background:var(--cream);padding:0}
+#videos{background:#f5f0e8;padding:60px 72px 52px;scroll-margin-top:0}
 .section-label{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:3px;opacity:0.4;margin-bottom:16px}
+
+.examples-header{display:flex;align-items:center;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.examples-title{font-family:'Abril Fatface',serif;font-size:26px;color:var(--espresso);line-height:1}
+
+/* Slide nav tabs */
+.slide-tabs{display:flex;gap:8px;margin-bottom:24px}
+.slide-tab{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:2px;padding:7px 18px;border-radius:999px;border:1.5px solid rgba(88,64,46,0.25);background:transparent;color:var(--espresso);cursor:pointer;transition:all 0.2s;opacity:0.55}
+.slide-tab.active{background:var(--espresso);color:var(--cream);border-color:var(--espresso);opacity:1}
+
+.slide-panel{display:none}
+.slide-panel.active{display:block}
+
 .gdrive-btn{display:inline-flex;align-items:center;gap:7px;border:1.5px solid rgba(88,64,46,0.3);border-radius:999px;padding:8px 18px;font-family:'Special Elite',monospace;font-size:10px;letter-spacing:1.5px;color:var(--espresso);text-decoration:none;transition:all 0.2s;background:rgba(88,64,46,0.06);white-space:nowrap}
 .gdrive-btn:hover{background:rgba(88,64,46,0.12);border-color:rgba(88,64,46,0.5)}
 .gdrive-ico{width:15px;height:15px;flex-shrink:0}
+
 .video-grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .vid-card-wrap{display:flex;flex-direction:column}
-.vm-paid-tag{font-family:'Special Elite',monospace;font-size:11px;color:#2E5F80;letter-spacing:0.5px;font-weight:600;text-transform:uppercase}
-.vm-organic-tag{font-family:'Special Elite',monospace;font-size:11px;color:#2E5F80;letter-spacing:0.5px;font-weight:600;text-transform:uppercase}
+
+/* Paid/Organic badge bubble */
+.vm-badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;font-family:'Special Elite',monospace;font-size:10px;letter-spacing:0.5px;font-weight:600;text-transform:uppercase;width:fit-content;margin-bottom:4px}
+.vm-badge.paid{background:rgba(46,95,128,0.12);color:#2E5F80;border:1px solid rgba(46,95,128,0.25)}
+.vm-badge.organic{background:rgba(67,89,59,0.12);color:var(--sage);border:1px solid rgba(67,89,59,0.3)}
+
 .video-logo{height:60px;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
 .video-logo img{max-height:44px;max-width:140px;object-fit:contain;display:block}
 .video-thumb-ref{aspect-ratio:9/16;border-radius:8px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;cursor:pointer;background:#1C1C19;margin-bottom:10px}
@@ -104,10 +120,22 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .play-btn-ref{position:relative;z-index:3;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(245,240,232,0.7);display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);transition:background 0.2s,border-color 0.2s;flex-shrink:0}
 .video-thumb-ref:hover .play-btn-ref{background:rgba(0,0,0,0.45);border-color:rgba(245,240,232,1)}
 .play-btn-ref::after{content:'';width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:11px solid rgba(245,240,232,0.9);margin-left:3px}
-.vid-meta-clean{width:100%;display:flex;flex-direction:column;gap:4px;padding:4px 0}
-.vid-meta-clean .vm-type{font-family:'Special Elite',monospace;font-size:14px;color:var(--espresso);letter-spacing:0.5px;font-weight:600}
-.vid-meta-clean .vm-niche{font-family:'Special Elite',monospace;font-size:12px;color:var(--espresso);letter-spacing:0.5px;opacity:0.6}
+.vid-meta-clean{width:100%;display:flex;flex-direction:column;gap:3px;padding:2px 0}
+.vid-meta-clean .vm-type{font-family:'Special Elite',monospace;font-size:13px;color:var(--espresso);letter-spacing:0.5px;font-weight:600}
+.vid-meta-clean .vm-niche{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--espresso);letter-spacing:0.2px;font-weight:500;opacity:0.75}
 .vc1-bg{background:#2E5F80}.vc2-bg{background:#1C4460}.vc3-bg{background:#3A6E8C}.vc4-bg{background:#254E6A}
+.vc5-bg{background:#4a3520}.vc6-bg{background:#2d5a3d}.vc7-bg{background:#5a3520}.vc8-bg{background:#3d2d50}
+
+/* SERVICES */
+#services{padding:60px 72px 52px;background:var(--cream);scroll-margin-top:0}
+.services-inner{max-width:680px;margin:0 auto}
+.services-cols{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.services-col-title{font-family:'Abril Fatface',serif;font-size:18px;color:var(--espresso);margin-bottom:18px;line-height:1.1}
+.services-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.services-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--espresso);line-height:1.4}
+.services-list li::before{content:'✳';font-family:'Special Elite',monospace;font-size:11px;color:var(--butter);background:var(--espresso);border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+
+/* PHOTOS */
 #photos{padding:56px;background:linear-gradient(150deg,#e4eef5,#dce8f2);scroll-margin-top:0}
 .macos-window{background:#f5f5f0;border-radius:12px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.12);border:0.5px solid rgba(0,0,0,0.1);max-width:860px;margin:0 auto}
 .mac-titlebar{background:#e8e8e3;border-bottom:0.5px solid rgba(0,0,0,0.1);padding:9px 14px;display:flex;align-items:center;gap:7px}
@@ -123,32 +151,9 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .photos-content{background:#f5f5f0;padding:8px}
 .photo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:3px}
 .photo-cell{aspect-ratio:9/16;overflow:hidden;border-radius:2px;background:#e8e4de;cursor:pointer;display:flex;align-items:center;justify-content:center}
-#about{padding:56px;background:linear-gradient(150deg,#fdf5e0,#faf2d8);scroll-margin-top:0}
-.notes-window{background:#faf9f4;border-radius:12px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.1);border:0.5px solid rgba(0,0,0,0.08);max-width:840px;margin:0 auto}
-.notes-titlebar{background:#e8e8e2;border-bottom:0.5px solid rgba(0,0,0,0.09);padding:9px 14px;display:flex;align-items:center;gap:7px}
-.notes-body{display:flex;min-height:380px}
-.notes-sb{width:175px;background:#edecea;border-right:0.5px solid rgba(0,0,0,0.07);flex-shrink:0}
-.notes-sb-sec{font-size:9px;font-weight:700;color:#bbb;letter-spacing:1px;text-transform:uppercase;padding:12px 14px 4px;font-family:-apple-system,sans-serif}
-.notes-item{padding:10px 14px;cursor:pointer;border-bottom:0.5px solid rgba(0,0,0,0.05)}
-.notes-item.active{background:rgba(242,209,126,0.38)}
-.notes-item-title{font-size:12px;font-weight:600;color:#333;font-family:-apple-system,sans-serif}
-.notes-item-date{font-size:10px;color:#bbb;float:right;font-family:-apple-system,sans-serif}
-.notes-item-prev{font-size:10px;color:#999;margin-top:2px;font-family:-apple-system,sans-serif}
-.notes-content{flex:1;padding:20px 24px;overflow:visible}
-.notes-ts{font-size:11px;color:#ccc;margin-bottom:6px;font-family:-apple-system,sans-serif}
-.notes-title{font-family:'Fraunces',serif;font-style:italic;font-size:24px;color:#1a1a1a;margin-bottom:12px;line-height:1.1}
-.notes-bio{font-size:12px;line-height:1.75;color:#333;margin-bottom:12px;font-family:-apple-system,'DM Sans',sans-serif}
-.notes-bio b{font-weight:700;color:#111}
-.blockq{border-left:3px solid var(--sage);padding-left:10px;font-style:italic;color:var(--sage);margin:10px 0;font-size:12px;line-height:1.6}
-.work-chips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
-.work-chip{background:rgba(88,64,46,0.07);border:1px solid rgba(88,64,46,0.13);border-radius:999px;padding:3px 10px;font-size:10px;color:var(--espresso)}
-.about-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
-.about-photo{aspect-ratio:1/2;border-radius:5px;overflow:hidden;background:linear-gradient(145deg,#e8ddd0,#d4c5b2);display:flex;align-items:center;justify-content:center}
-.about-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.ap2{background:linear-gradient(145deg,#d0d8c8,#c0c8b8)}
-.ap3{background:linear-gradient(145deg,#c8d0d8,#b8c0c8)}
-.ap4{background:linear-gradient(145deg,#d8c8d0,#c8b8c0)}
-#contact{padding:56px;background:linear-gradient(150deg,#e4eef5,#dce8f2);position:relative;overflow:hidden}
+
+/* CONTACT */
+#contact{padding:56px;background:#fdf5e0;position:relative;overflow:hidden}
 .contact-pre{text-align:center;margin-bottom:26px}
 .bracket-label{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:3px;opacity:0.4;margin-bottom:8px}
 .contact-headline{font-family:'Abril Fatface',serif;font-size:clamp(28px,3.8vw,50px);color:var(--espresso);margin-bottom:10px}
@@ -171,6 +176,46 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .form-btn-row{padding:14px 18px;background:#f5f5ef;border-top:0.5px solid rgba(0,0,0,0.06);text-align:center}
 .btn-form{background:var(--butter);color:var(--espresso);border:none;border-radius:999px;padding:12px 28px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s}
 .btn-form:hover{background:#edc96a;transform:translateY(-2px)}
+
+/* ABOUT — now after footer photos */
+#about{padding:56px;background:linear-gradient(150deg,#fdf5e0,#faf2d8);scroll-margin-top:0}
+.notes-window{background:#faf9f4;border-radius:12px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.1);border:0.5px solid rgba(0,0,0,0.08);max-width:840px;margin:0 auto}
+.notes-titlebar{background:#e8e8e2;border-bottom:0.5px solid rgba(0,0,0,0.09);padding:9px 14px;display:flex;align-items:center;gap:7px}
+.notes-body{display:flex;min-height:380px}
+.notes-sb{width:175px;background:#edecea;border-right:0.5px solid rgba(0,0,0,0.07);flex-shrink:0}
+.notes-sb-sec{font-size:9px;font-weight:700;color:#bbb;letter-spacing:1px;text-transform:uppercase;padding:12px 14px 4px;font-family:-apple-system,sans-serif}
+.notes-item{padding:10px 14px;cursor:pointer;border-bottom:0.5px solid rgba(0,0,0,0.05)}
+.notes-item.active{background:rgba(242,209,126,0.38)}
+.notes-item-title{font-size:12px;font-weight:600;color:#333;font-family:-apple-system,sans-serif}
+.notes-item-date{font-size:10px;color:#bbb;float:right;font-family:-apple-system,sans-serif}
+.notes-item-prev{font-size:10px;color:#999;margin-top:2px;font-family:-apple-system,sans-serif}
+.notes-content{flex:1;padding:20px 24px;overflow:visible}
+.notes-ts{font-size:11px;color:#ccc;margin-bottom:6px;font-family:-apple-system,sans-serif}
+.notes-title{font-family:'Fraunces',serif;font-style:italic;font-size:24px;color:#1a1a1a;margin-bottom:12px;line-height:1.1}
+.notes-bio{font-size:12px;line-height:1.75;color:#333;margin-bottom:12px;font-family:-apple-system,'DM Sans',sans-serif}
+.notes-bio b{font-weight:700;color:#111}
+.blockq{border-left:3px solid var(--sage);padding-left:10px;font-style:italic;color:var(--sage);margin:10px 0;font-size:12px;line-height:1.6}
+.about-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.about-photo{aspect-ratio:1/2;border-radius:5px;overflow:hidden;background:linear-gradient(145deg,#e8ddd0,#d4c5b2);display:flex;align-items:center;justify-content:center}
+.about-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.ap2{background:linear-gradient(145deg,#d0d8c8,#c0c8b8)}
+.ap3{background:linear-gradient(145deg,#c8d0d8,#b8c0c8)}
+.ap4{background:linear-gradient(145deg,#d8c8d0,#c8b8c0)}
+
+/* BOTTOM PHOTOS */
+.bottom-photos{display:flex;gap:16px;padding:32px 56px;background:var(--espresso);justify-content:center;align-items:center}
+.bp{flex:0 0 auto;width:160px;aspect-ratio:9/16;border-radius:8px}
+.bp img{width:100%;height:100%;object-fit:cover;border-radius:8px;display:block}
+.bp1{background:linear-gradient(145deg,#8a7060,#6d5848)}
+.bp2{background:linear-gradient(145deg,#6a7a68,#506050)}
+.bp3{background:linear-gradient(145deg,#687880,#505860)}
+
+footer{background:var(--butter);padding:13px 28px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(88,64,46,0.12)}
+.footer-brand{color:var(--espresso);font-size:12px;font-weight:600;letter-spacing:1px;display:flex;align-items:center;gap:6px}
+.footer-ugc-lbl{opacity:0.6;font-size:10px;letter-spacing:3px;font-weight:400}
+.footer-copy{color:rgba(88,64,46,0.38);font-size:11px}
+
+/* MODAL */
 .modal-bd{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2000;align-items:center;justify-content:center}
 .modal-bd.open{display:flex}
 .modal{background:white;border-radius:14px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.28);max-width:660px;width:90%;max-height:90vh;display:flex;flex-direction:column}
@@ -178,23 +223,13 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .modal-close{background:none;border:none;font-size:15px;cursor:pointer;color:#666;margin-left:auto;padding:2px 7px;border-radius:5px}
 .modal-close:hover{background:rgba(0,0,0,0.08)}
 .modal iframe{flex:1;min-height:520px;border:none}
-.bottom-photos{display:flex;gap:16px;padding:32px 56px;background:var(--espresso);justify-content:center;align-items:center}
-.bp{flex:0 0 auto;width:160px;aspect-ratio:9/16;border-radius:8px}
-.bp1{background:linear-gradient(145deg,#8a7060,#6d5848)}
-.bp2{background:linear-gradient(145deg,#6a7a68,#506050)}
-.bp3{background:linear-gradient(145deg,#687880,#505860)}
-.bp img{width:100%;height:100%;object-fit:cover;border-radius:8px;display:block}
-footer{background:var(--butter);padding:13px 28px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(88,64,46,0.12)}
-.footer-brand{color:var(--espresso);font-size:12px;font-weight:600;letter-spacing:1px;display:flex;align-items:center;gap:6px}
-.footer-ugc-lbl{opacity:0.6;font-size:10px;letter-spacing:3px;font-weight:400}
-.footer-copy{color:rgba(88,64,46,0.38);font-size:11px}
+
 .toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(70px);background:var(--sage);color:var(--cream);border-radius:999px;padding:11px 22px;font-size:12px;z-index:3000;opacity:0;transition:all 0.35s;pointer-events:none}
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 .fade-up{opacity:0;transform:translateY(20px);transition:opacity 0.6s,transform 0.6s}
 .fade-up.visible{opacity:1;transform:translateY(0)}
-.mobile-nav-drawer{display:none}
-.nav-hamburger{display:none}
 
+/* MOBILE */
 @media(max-width:768px){
   #cursor{display:none}
   nav{top:10px;padding:7px 10px;gap:6px;max-width:calc(100vw - 20px);justify-content:center}
@@ -203,45 +238,36 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
   .nav-logo{display:flex;padding-left:6px;border-left:1px solid rgba(255,255,255,0.15);font-size:10px;gap:4px;align-items:center}
   .nav-logo .pulse{display:block;width:6px;height:6px;background:#4ade80;border-radius:50%;animation:none;box-shadow:none;flex-shrink:0}
   .nav-ugc{font-size:9px;letter-spacing:2px}
-  .nav-hamburger{display:none}
-  .mobile-nav-drawer{display:none!important}
   .nav-links{display:flex;gap:0}
   .nav-links a{font-size:9.5px;padding:3px 5px;color:rgba(250,250,242,0.65)}
   #home{padding:0;min-height:100svh;flex-direction:column;justify-content:space-between}
-  .home-inner{flex-direction:column-reverse;align-items:center;gap:0;padding:50px 20px 60px;flex:1;text-align:center;justify-content:flex-end}
+  .home-inner{flex-direction:column-reverse;align-items:center;gap:0;padding:50px 16px 40px;flex:1;text-align:center;justify-content:flex-end}
   .hero-left{flex:none;width:100%;max-width:100%;gap:8px;align-items:center;padding-top:44px}
   .headline{font-size:clamp(44px,12vw,62px)}
   .ugc-label{font-size:16px;letter-spacing:5px;margin-top:10px}
   .ugc-dot,.ugc-sub-inline{display:none}
   .ugc-sublabel-mobile{display:block}
   .open-collab{justify-content:center}
-  .chips-row{flex-direction:row;flex-wrap:wrap;gap:6px;justify-content:center;align-items:flex-start;margin-top:4px}
-  .chip{font-size:10px;padding:4px 11px}
-  .copy-hint-txt{text-align:center;width:100%}
-  .info-table{grid-template-columns:auto auto;gap:10px 10px;width:100%!important;text-align:left;margin-top:8px;padding:10px 10px}
-  .it-vals li{font-size:9.5px;white-space:nowrap}
-  .it-label{font-size:7.5px}
-  .niches{justify-content:center;gap:5px;margin-top:10px}
-  .scroll-arrow-wrap{justify-content:center;margin-top:2px}
-  .scroll-arrow{margin-left:0;justify-content:center;width:auto}
+  .hero-info-stack{align-items:flex-start;text-align:left}
+  .hero-info-line{font-size:clamp(12px,3.4vw,15px);justify-content:flex-start}
+  .email-center-wrap{align-items:center;width:100%}
   .hero-right{width:100%;justify-content:center;padding:20px 0 8px;gap:14px;flex-direction:row;align-items:flex-start}
   .stamp-inner{width:148px;height:263px}
   .video-inner{width:148px;height:263px}
-  .airdrop-popup{width:90px;bottom:-32px;left:-8px;padding:4px 5px;border-radius:7px}
-  .airdrop-header{margin-bottom:3px;gap:4px}
-  .airdrop-icon{width:13px!important;height:13px!important;font-size:6px!important;border-radius:3px!important;flex-shrink:0}
-  .airdrop-title{font-size:7px!important}
-  .airdrop-sub{font-size:6px!important}
-  .airdrop-file{padding:2px 3px!important;margin-bottom:3px!important;gap:3px}
-  .airdrop-file-name{font-size:6px!important}
-  .airdrop-file-size{display:none!important}
-  .airdrop-btns{gap:2px}
-  .airdrop-decline,.airdrop-accept{font-size:7px!important;padding:2px 3px!important;border-radius:3px!important}
   .ticker-wrap{margin:0!important}
   #videos{padding:44px 18px 36px!important}
+  #examples2>div{padding:44px 18px 36px!important}
   .video-grid4{grid-template-columns:repeat(2,1fr);gap:10px}
   .vid-meta-clean .vm-type{font-size:11px}
+  .vid-meta-clean .vm-niche{font-size:11px}
   .gdrive-btn{font-size:9px;padding:6px 12px}
+  #services{padding:40px 18px}
+  .services-inner{max-width:100%}
+  .services-cols{grid-template-columns:1fr 1fr;gap:16px}
+  .services-col-title{font-size:14px;margin-bottom:10px}
+  .services-list li{font-size:11px;gap:7px}
+  .services-list li::before{width:16px;height:16px;font-size:9px}
+  .section-email-wm{font-size:11px;top:12px;right:12px}
   #photos{padding:40px 16px}
   .macos-window{max-width:100%;border-radius:10px}
   .mac-titlebar{padding:8px 12px}
@@ -264,8 +290,6 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
   .blockq{font-size:10px;padding-left:8px;margin:6px 0}
   .about-photos{grid-template-columns:repeat(4,1fr);gap:4px;margin-top:8px}
   .about-photo{aspect-ratio:2/3}
-  .work-chips{gap:3px;margin-bottom:8px}
-  .work-chip{font-size:8px;padding:2px 7px}
   #contact{padding:44px 18px 36px}
   .contact-email-big{font-size:16px;word-break:break-all}
   .imsg-win{width:100%}
@@ -276,8 +300,6 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
 }
 @media(max-width:390px){
   .headline{font-size:36px}
-  .info-table{gap:8px 8px;padding:8px 8px}
-  .it-vals li{font-size:9px}
   .stamp-inner{width:115px;height:204px}
   .video-inner{width:115px;height:204px}
   .video-grid4{grid-template-columns:1fr 1fr;gap:8px}
@@ -286,22 +308,21 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
 </head>
 <body>
 <div id="cursor"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path id="cursor-path" d="M12 2V22M2 12H22M5.5 5.5L18.5 18.5M18.5 5.5L5.5 18.5" stroke="#58402E" stroke-width="2.8" stroke-linecap="round"/></svg></div>
+
 <nav id="navbar">
   <div class="nav-dots"><div class="nav-dot" style="background:#FF5F57"></div><div class="nav-dot" style="background:#FFBD2E"></div><div class="nav-dot" style="background:#28C840"></div></div>
   <div class="nav-url">💌 yan.tran.ugc@gmail.com</div>
   <div class="nav-links">
-    <a href="#home" class="active">Home</a><a href="#videos">Videos</a><a href="#photos">Photos</a><a href="#about">About</a><a href="#contact">Contact</a>
+    <a href="#home" class="active">Home</a>
+    <a href="#videos">Examples</a>
+    <a href="#services">Services</a>
+    <a href="#photos">Photos</a>
+    <a href="#contact">Contact</a>
   </div>
   <div class="nav-logo">YAN <div class="pulse"></div> <span class="nav-ugc">UGC</span></div>
 </nav>
-<div class="mobile-nav-drawer" id="mobileNavDrawer">
-  <button class="mobile-nav-close" onclick="closeMobileNav()">✕</button>
-  <a href="#home" onclick="closeMobileNav();navScrollTo('home')">Home</a>
-  <a href="#videos" onclick="closeMobileNav();navScrollTo('videos')">Videos</a>
-  <a href="#photos" onclick="closeMobileNav();navScrollTo('photos')">Photos</a>
-  <a href="#about" onclick="closeMobileNav();navScrollTo('about')">About</a>
-  <a href="#contact" onclick="closeMobileNav();navScrollTo('contact')">Contact</a>
-</div>
+
+<!-- HERO -->
 <section id="home">
   <div class="home-inner">
     <div class="hero-left fade-up">
@@ -309,80 +330,24 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
       <div class="headline" id="hero-headline"></div>
       <div class="ugc-label">UGC CREATOR <span class="ugc-dot">·</span> <span class="ugc-sub-inline">Creative Strategist</span></div>
       <div class="ugc-sublabel ugc-sublabel-mobile">Creative Strategist</div>
-      <div class="chips-row">
-        <div class="chip">📍 Seattle,&nbsp;WA · Remote</div>
-        <div style="display:flex;flex-direction:column;gap:3px;align-items:flex-start">
-          <div class="chip email-chip" id="email-chip" onclick="copyEmailChip()" title="Click to copy">💌 yan.tran.ugc@gmail.com</div>
-          <div class="copy-hint-txt">^ click to copy</div>
-        </div>
+
+      <div class="hero-info-stack">
+        <div class="hero-info-line">25 years old</div>
+        <div class="hero-info-line">Remote<span class="hero-info-sep">|</span>Currently Seattle, WA</div>
+        <div class="hero-info-line">Electrical Engineer<span class="hero-info-sep">|</span>Elopement Photographer</div>
+        <div class="hero-info-line">English<span class="hero-info-sep">|</span>Vietnamese<span class="hero-info-sep">|</span>Spanish<span class="hero-info-sep">|</span>Cantonese</div>
+        <div class="hero-info-line">Ironman 70.3<span class="hero-info-sep">|</span>25+ Countries</div>
       </div>
-      <div class="info-table">
-        <div>
-          <div class="it-label">Background</div>
-          <ul class="it-vals">
-            <li>Gen-Z | 25 y.o.</li>
-            <li>Engineer in Tech</li>
-            <li>Elopement&nbsp;Photographer</li>
-          </ul>
-        </div>
-        <div>
-          <div class="it-label">Can Also Film In</div>
-          <ul class="it-vals">
-            <li>Vietnamese</li>
-            <li>Spanish</li>
-            <li>Cantonese</li>
-          </ul>
-        </div>
-        <div>
-          <div class="it-label">Interests</div>
-          <ul class="it-vals">
-            <li>Running as a quarter-life crisis</li>
-            <li>Getting lost in a new city</li>
-            <li>Yoga to avoid back pain</li>
-          </ul>
-        </div>
-        <div>
-          <div class="it-label">Travel</div>
-          <ul class="it-vals">
-            <li>25+ Countries</li>
-            <li>From nature to cities</li>
-            <li>Sleeper buses to luxury hotels</li>
-          </ul>
-        </div>
-      </div>
-      <div class="niches">
-        <span class="niche-tag">Tech &amp; Apps</span>
-        <span class="niche-tag">Travel</span>
-        <span class="niche-tag">Lifestyle</span>
-        <span class="niche-tag">Finance</span>
-      </div>
-      <div class="scroll-arrow-wrap">
-        <div class="scroll-arrow" onclick="document.getElementById('videos').scrollIntoView({behavior:'smooth'})">
-          <span class="scroll-arrow-txt">scroll to see my work</span>
-          <span class="scroll-arrow-line">↓</span>
-        </div>
+
+      <div class="email-center-wrap">
+        <a href="mailto:yan.tran.ugc@gmail.com" class="chip email-chip">💌 yan.tran.ugc@gmail.com</a>
       </div>
     </div>
+
     <div class="hero-right fade-up" style="transition-delay:0.15s">
       <div style="display:flex;gap:16px;align-items:flex-start">
-        <div style="position:relative">
-          <div class="stamp-frame photo-stamp">
-            <div class="stamp-inner"><img src="images/profile_pic.webp" alt="Yan"></div>
-          </div>
-          <div class="airdrop-popup" id="airdrop-popup">
-            <div class="airdrop-header">
-              <div class="airdrop-icon" style="width:22px;height:22px;font-size:10px;border-radius:6px">✈️</div>
-              <div><div class="airdrop-title" style="font-size:10px">AirDrop</div><div class="airdrop-sub" style="font-size:9px">"Yan's iPhone"</div></div>
-            </div>
-            <div class="airdrop-file" style="padding:4px 6px;margin-bottom:6px">
-              <span style="font-size:13px">📷</span>
-              <div><div class="airdrop-file-name" style="font-size:9px">yan_portfolio.jpg</div><div class="airdrop-file-size" style="font-size:8px">3.2 MB</div></div>
-            </div>
-            <div class="airdrop-btns">
-              <button class="airdrop-decline" style="font-size:10px;padding:4px" onclick="declineAirdrop()">Decline</button>
-              <button class="airdrop-accept" style="font-size:10px;padding:4px" onclick="acceptAirdrop()">Accept</button>
-            </div>
-          </div>
+        <div class="stamp-frame photo-stamp">
+          <div class="stamp-inner"><img src="images/profile_pic.webp" alt="Yan"></div>
         </div>
         <div class="stamp-frame video-stamp">
           <div class="video-inner" id="introWrap" onclick="toggleIntro()">
@@ -398,11 +363,14 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
   </div>
   <div class="ticker-wrap" style="margin:0 -72px"><div class="ticker-track" id="ticker-track"></div></div>
 </section>
+
+<!-- EXAMPLES — Section 1 -->
 <section id="examples" style="padding:0">
-  <div id="videos" style="background:#f5f0e8;padding:60px 72px 52px;scroll-margin-top:0">
+  <div id="videos" style="background:#f5f0e8;padding:60px 72px 52px;scroll-margin-top:0;position:relative">
+    <a href="mailto:yan.tran.ugc@gmail.com" class="section-email-wm wm-dark">yan.tran.ugc@gmail.com</a>
     <div class="section-label">[ my work ]</div>
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:22px;flex-wrap:wrap">
-      <div style="font-family:'Abril Fatface',serif;font-size:26px;color:var(--espresso);line-height:1">Paid &amp; Organic</div>
+    <div class="examples-header">
+      <div class="examples-title">Paid &amp; Organic</div>
       <a href="https://drive.google.com/drive/u/1/folders/1vGiUqbdl0x44QrqvwOmL8X1UcTBQy27o" target="_blank" class="gdrive-btn">
         <svg class="gdrive-ico" viewBox="0 0 87.3 78"><path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="#0066da"/><path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z" fill="#00ac47"/><path d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z" fill="#ea4335"/><path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="#00832d"/><path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#2684fc"/><path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 27h27.45c0-1.55-.4-3.1-1.2-4.5z" fill="#ffba00"/></svg>
         DOWNLOAD ALL VIDEOS
@@ -417,7 +385,11 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           <video src="videos/airalo.mp4" playsinline></video>
           <div class="play-btn-ref"></div>
         </div>
-        <div class="vid-meta-clean"><span class="vm-paid-tag">Paid</span><span class="vm-type">Product Demo</span><span class="vm-niche">Travel · Apps</span></div>
+        <div class="vid-meta-clean">
+          <span class="vm-badge paid">Paid</span>
+          <span class="vm-type">Testimonial</span>
+          <span class="vm-niche">Travel · Apps</span>
+        </div>
       </div>
       <div class="vid-card-wrap">
         <div class="video-logo"><img src="images/wise-logo.png" alt="Wise"></div>
@@ -427,32 +399,151 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           <video src="videos/wise.mp4" playsinline></video>
           <div class="play-btn-ref"></div>
         </div>
-        <div class="vid-meta-clean"><span class="vm-paid-tag">Paid</span><span class="vm-type">Problem/Solution</span><span class="vm-niche">Finance · Travel</span></div>
+        <div class="vid-meta-clean">
+          <span class="vm-badge paid">Paid</span>
+          <span class="vm-type">Problem/Solution</span>
+          <span class="vm-niche">Finance · Travel</span>
+        </div>
       </div>
       <div class="vid-card-wrap">
-        <div class="video-logo"><img src="images/doordash-logo.png" alt="DoorDash"></div>
+        <div class="video-logo"><img src="images/cotopaxi-logo.png" alt="Cotopaxi"></div>
         <div class="video-thumb-ref vc3-bg" onclick="playVideo(this)">
+          <div class="phone-notch"></div>
+          <img class="video-poster-img" src="images/cotopaxi-cover.png" alt="Cotopaxi cover">
+          <video src="videos/cotopaxi.mp4" playsinline></video>
+          <div class="play-btn-ref"></div>
+        </div>
+        <div class="vid-meta-clean">
+          <span class="vm-badge organic">Organic</span>
+          <span class="vm-type">Routine</span>
+          <span class="vm-niche">Lifestyle</span>
+        </div>
+      </div>
+      <div class="vid-card-wrap">
+        <div class="video-logo"><img src="images/preply-logo.png" alt="Preply"></div>
+        <div class="video-thumb-ref vc4-bg" onclick="playVideo(this)">
+          <div class="phone-notch"></div>
+          <img class="video-poster-img" src="images/preply-cover.png" alt="Preply cover">
+          <video src="videos/preply.mp4" playsinline></video>
+          <div class="play-btn-ref"></div>
+        </div>
+        <div class="vid-meta-clean">
+          <span class="vm-badge paid">Paid</span>
+          <span class="vm-type">Product Demo</span>
+          <span class="vm-niche">Lifestyle · Apps</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLES — Section 2 -->
+<section id="examples2" style="padding:0">
+  <div style="background:#eae5dc;padding:60px 72px 52px;scroll-margin-top:0;position:relative">
+    <a href="mailto:yan.tran.ugc@gmail.com" class="section-email-wm wm-dark">yan.tran.ugc@gmail.com</a>
+    <div class="section-label">[ my work ]</div>
+    <div class="examples-header">
+      <div class="examples-title">Paid &amp; Organic</div>
+      <a href="https://drive.google.com/drive/u/1/folders/1vGiUqbdl0x44QrqvwOmL8X1UcTBQy27o" target="_blank" class="gdrive-btn">
+        <svg class="gdrive-ico" viewBox="0 0 87.3 78"><path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="#0066da"/><path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z" fill="#00ac47"/><path d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z" fill="#ea4335"/><path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="#00832d"/><path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#2684fc"/><path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 27h27.45c0-1.55-.4-3.1-1.2-4.5z" fill="#ffba00"/></svg>
+        DOWNLOAD ALL VIDEOS
+      </a>
+    </div>
+    <div class="video-grid4">
+      <div class="vid-card-wrap">
+        <div class="video-logo"><img src="images/doordash-logo.png" alt="DoorDash"></div>
+        <div class="video-thumb-ref vc4-bg" onclick="playVideo(this)">
           <div class="phone-notch"></div>
           <img class="video-poster-img" src="images/doordash-cover.png" alt="DoorDash cover">
           <video src="videos/doordash.mp4" playsinline></video>
           <div class="play-btn-ref"></div>
         </div>
-        <div class="vid-meta-clean"><span class="vm-organic-tag">Organic</span><span class="vm-type">Humor</span><span class="vm-niche">Apps</span></div>
+        <div class="vid-meta-clean">
+          <span class="vm-badge paid">Paid</span>
+          <span class="vm-type">Humor</span>
+          <span class="vm-niche">Lifestyle · Apps</span>
+        </div>
+      </div>
+      <div class="vid-card-wrap">
+        <div class="video-logo"><img src="images/radiantwaxing-logo.png" alt="Radiant Waxing"></div>
+        <div class="video-thumb-ref vc8-bg" onclick="playVideo(this)">
+          <div class="phone-notch"></div>
+          <img class="video-poster-img" src="images/radiantwaxing-cover.png" alt="Radiant Waxing cover">
+          <video src="videos/radiantwaxing.mp4" playsinline></video>
+          <div class="play-btn-ref"></div>
+        </div>
+        <div class="vid-meta-clean">
+          <span class="vm-badge organic">Organic</span>
+          <span class="vm-type">Reaction / VO Story</span>
+          <span class="vm-niche">Lifestyle</span>
+        </div>
       </div>
       <div class="vid-card-wrap">
         <div class="video-logo"><img src="images/fujifilm-logo.png" alt="Fujifilm"></div>
-        <div class="video-thumb-ref vc4-bg" onclick="playVideo(this)">
+        <div class="video-thumb-ref vc5-bg" onclick="playVideo(this)">
           <div class="phone-notch"></div>
           <img class="video-poster-img" src="images/fujifilm-cover.png" alt="Fujifilm cover">
           <video src="videos/fujifilm.mp4" playsinline></video>
           <div class="play-btn-ref"></div>
         </div>
-        <div class="vid-meta-clean"><span class="vm-organic-tag">Organic</span><span class="vm-type">POV</span><span class="vm-niche">Lifestyle</span></div>
+        <div class="vid-meta-clean">
+          <span class="vm-badge organic">Organic</span>
+          <span class="vm-type">POV</span>
+          <span class="vm-niche">Lifestyle · Travel</span>
+        </div>
+      </div>
+      <div class="vid-card-wrap">
+        <div class="video-logo"><img src="images/runna-logo.png" alt="Runna"></div>
+        <div class="video-thumb-ref vc7-bg" onclick="playVideo(this)">
+          <div class="phone-notch"></div>
+          <img class="video-poster-img" src="images/runna-cover.png" alt="Runna cover">
+          <video src="videos/runna.mp4" playsinline></video>
+          <div class="play-btn-ref"></div>
+        </div>
+        <div class="vid-meta-clean">
+          <span class="vm-badge organic">Organic</span>
+          <span class="vm-type">Relatable</span>
+          <span class="vm-niche">Fitness · Apps</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
-<section id="photos">
+
+<!-- SERVICES -->
+<section id="services" style="position:relative">
+  <a href="mailto:yan.tran.ugc@gmail.com" class="section-email-wm wm-dark">yan.tran.ugc@gmail.com</a>
+  <div class="section-label">[ what i offer ]</div>
+  <div style="font-family:'Abril Fatface',serif;font-size:26px;color:var(--espresso);margin-bottom:28px;line-height:1">Services</div>
+  <div class="services-inner">
+    <div class="services-cols">
+      <div>
+        <div class="services-col-title">Deliverables</div>
+        <ul class="services-list">
+          <li>Concept &amp; Scriptwriting</li>
+          <li>Hooks / CTA Variations</li>
+          <li>Raw Footage</li>
+          <li>B-Roll</li>
+          <li>Photos</li>
+        </ul>
+      </div>
+      <div>
+        <div class="services-col-title">Add-ons</div>
+        <ul class="services-list">
+          <li>Usage Rights (monthly &amp; perpetual)</li>
+          <li>Aspect Ratio Resizing</li>
+          <li>Refilms</li>
+          <li>Exclusivity</li>
+          <li>Whitelisting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTOS -->
+<section id="photos" style="position:relative">
+  <a href="mailto:yan.tran.ugc@gmail.com" class="section-email-wm wm-dark">yan.tran.ugc@gmail.com</a>
   <div class="section-label">[ still shots ]</div>
   <div style="font-family:'Abril Fatface',serif;font-size:22px;color:var(--espresso);margin-bottom:16px">Photography</div>
   <div class="macos-window fade-up">
@@ -479,6 +570,37 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
     </div>
   </div>
 </section>
+
+<!-- CONTACT -->
+<section id="contact" style="position:relative;overflow:hidden">
+  <div class="contact-pre fade-up">
+    <div class="bracket-label">[ get in touch ]</div>
+    <div class="contact-headline">Let's make something together!</div>
+    <div class="contact-email-lbl">contact me at</div>
+    <div class="contact-email-big" onclick="copyEmail()">yan.tran.ugc@gmail.com</div>
+  </div>
+  <div class="imsg-win fade-up" style="transition-delay:0.12s">
+    <div class="imsg-tb">
+      <div class="mac-dots"><div class="mac-dot" style="background:#FF5F57"></div><div class="mac-dot" style="background:#FFBD2E"></div><div class="mac-dot" style="background:#28C840"></div></div>
+      <div class="imsg-ctr"><div class="imsg-av">Y</div><div class="imsg-name">Yan</div></div>
+    </div>
+    <div class="imsg-body">
+      <div class="imsg-row"><div class="imsg-avsm">Y</div><div class="bubble bl">Hey! 👋 Contact me at <a href="mailto:yan.tran.ugc@gmail.com">yan.tran.ugc@gmail.com</a></div></div>
+      <div class="imsg-row"><div class="imsg-avsm">Y</div><div class="bubble bl">Or fill out my form below!</div></div>
+      <div class="imsg-row r"><div class="bubble br">Great! Talk soon! 🤝</div></div>
+    </div>
+    <div class="form-btn-row"><button class="btn-form" onclick="openForm()">Fill Out My Form →</button></div>
+  </div>
+</section>
+
+<!-- BOTTOM PHOTOS -->
+<div class="bottom-photos">
+  <div class="bp bp1"><img src="images/footer1.jpg" alt="Footer 1"></div>
+  <div class="bp bp2"><img src="images/footer2.jpg" alt="Footer 2"></div>
+  <div class="bp bp3"><img src="images/footer3.jpg" alt="Footer 3"></div>
+</div>
+
+<!-- ABOUT SECTION — commented out, preserved for later use
 <section id="about">
   <div class="section-label">[ about ]</div>
   <div style="font-family:'Abril Fatface',serif;font-size:22px;color:var(--espresso);margin-bottom:16px">Why Me?</div>
@@ -504,10 +626,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           From relatable daily life to direct-response ads, whether it's <b>paid ads</b> built to <b>convert</b> or <b>organic content</b> built to <b>connect</b>, I approach every project with a deep understanding of <b>brand needs</b> and your <b>social strategy</b>.
           <div class="blockq">The result? Content that highlights your product, feels real to your audience, and converts.</div>
         </div>
-        <div class="work-chips">
-          <span class="work-chip">TikTok</span><span class="work-chip">Instagram Reels</span><span class="work-chip">YouTube Shorts</span><span class="work-chip">Talking Head</span><span class="work-chip">B-Roll</span><span class="work-chip">Voiceover</span><span class="work-chip">Script Writing</span><span class="work-chip">Strong Hooks</span><span class="work-chip">Photography</span><span class="work-chip">Paid UGC</span><span class="work-chip">Organic UGC</span>
-        </div>
-        <div class="about-photos">
+        <div class="about-photos" style="margin-top:12px">
           <div class="about-photo"><img src="images/me1.jpg" alt="Yan 1"></div>
           <div class="about-photo ap2"><img src="images/me2.jpg" alt="Yan 2"></div>
           <div class="about-photo ap3"><img src="images/me3.jpg" alt="Yan 3"></div>
@@ -517,35 +636,14 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
     </div>
   </div>
 </section>
-<section id="contact" style="position:relative;overflow:hidden">
-  <div class="contact-pre fade-up">
-    <div class="bracket-label">[ get in touch ]</div>
-    <div class="contact-headline">Let's make something together.</div>
-    <div class="contact-email-lbl">contact me at</div>
-    <div class="contact-email-big" onclick="copyEmail()">yan.tran.ugc@gmail.com</div>
-  </div>
-  <div class="imsg-win fade-up" style="transition-delay:0.12s">
-    <div class="imsg-tb">
-      <div class="mac-dots"><div class="mac-dot" style="background:#FF5F57"></div><div class="mac-dot" style="background:#FFBD2E"></div><div class="mac-dot" style="background:#28C840"></div></div>
-      <div class="imsg-ctr"><div class="imsg-av">Y</div><div class="imsg-name">Yan</div></div>
-    </div>
-    <div class="imsg-body">
-      <div class="imsg-row"><div class="imsg-avsm">Y</div><div class="bubble bl">Hey! 👋 Contact me at <a href="mailto:yan.tran.ugc@gmail.com">yan.tran.ugc@gmail.com</a></div></div>
-      <div class="imsg-row"><div class="imsg-avsm">Y</div><div class="bubble bl">Or fill out my form below!</div></div>
-      <div class="imsg-row r"><div class="bubble br">Great! Talk soon! 🤝</div></div>
-    </div>
-    <div class="form-btn-row"><button class="btn-form" onclick="openForm()">Fill Out My Form →</button></div>
-  </div>
-</section>
-<div class="bottom-photos">
-  <div class="bp bp1"><img src="images/footer1.jpg" alt="Footer 1"></div>
-  <div class="bp bp2"><img src="images/footer2.jpg" alt="Footer 2"></div>
-  <div class="bp bp3"><img src="images/footer3.jpg" alt="Footer 3"></div>
-</div>
+END ABOUT SECTION -->
+
 <footer>
   <div class="footer-brand">YAN <div class="pulse"></div> <span class="footer-ugc-lbl">UGC</span></div>
   <div class="footer-copy">© 2025</div>
 </footer>
+
+<!-- MODAL -->
 <div class="modal-bd" id="form-modal" onclick="closeBackdrop(event)">
   <div class="modal">
     <div class="modal-hdr">
@@ -556,32 +654,86 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfjW5tRiwJ2z75v_N-AwM3vvAYi7X6UITsqDToIEkj62q-vZA/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </div>
 </div>
+
 <div class="toast" id="toast">📋 Email copied!</div>
+
 <script>
-function navScrollTo(id){setTimeout(()=>{const el=document.getElementById(id);if(!el)return;if(id==='contact'){const top=el.offsetTop-Math.max(0,(window.innerHeight-el.offsetHeight)/2);window.scrollTo({top:Math.max(0,top),behavior:'smooth'});}else{window.scrollTo({top:el.offsetTop,behavior:'smooth'});}},50);}
-function openMobileNav(){document.getElementById('mobileNavDrawer').classList.add('open')}
-function closeMobileNav(){document.getElementById('mobileNavDrawer').classList.remove('open')}
-document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',function(e){const href=this.getAttribute('href');if(!href||!href.startsWith('#'))return;const target=document.getElementById(href.slice(1));if(!target)return;e.preventDefault();if(href==='#contact'){const top=target.offsetTop-Math.max(0,(window.innerHeight-target.offsetHeight)/2);window.scrollTo({top:Math.max(0,top),behavior:'smooth'});}else{window.scrollTo({top:target.offsetTop,behavior:'smooth'});}});});
+// Cursor
 const cp=document.getElementById('cursor-path');
 let mx=0,my=0,cx=0,cy=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
 (function aC(){cx+=(mx-cx)*0.13;cy+=(my-cy)*0.13;const c=document.getElementById('cursor');c.style.left=cx+'px';c.style.top=cy+'px';requestAnimationFrame(aC)})();
 window.addEventListener('scroll',()=>{const bp=document.querySelector('.bottom-photos');cp.setAttribute('stroke',bp&&window.scrollY>=bp.offsetTop-60?'#F2D17E':'#58402E');});
-window.addEventListener('scroll',()=>{const ids=['home','videos','photos','about','contact'];let cur='home';ids.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-140)cur=id;});document.querySelectorAll('.nav-links a').forEach(a=>{a.classList.toggle('active',(a.getAttribute('href')==='#'+cur));});});
-(function(){const el=document.getElementById('hero-headline');const text="hi, i'm Yan.";const yanIdx=text.indexOf('Y');let h='';for(let i=0;i<text.length;i++){const c=text[i],isY=i>=yanIdx;const cls='letter'+(isY?' yan-word':'');h+=c===' '?`<span class="${cls}" style="display:inline-block">&nbsp;</span>`:`<span class="${cls}">${c}</span>`;}el.innerHTML=h;})();
-(function(){const words=['TECH & APPS','TRAVEL','LIFESTYLE','FINANCE'];let html='';for(let r=0;r<6;r++)words.forEach(w=>{html+=`<span>${w}</span><span>✳</span>`;});const track=document.getElementById('ticker-track');track.innerHTML=html;requestAnimationFrame(()=>{const half=track.scrollWidth/2;const dur=(half/55).toFixed(1);track.style.animation=`tickerMove ${dur}s linear infinite`;});})();
-function copyEmailChip(){navigator.clipboard.writeText('yan.tran.ugc@gmail.com').then(()=>{const chip=document.getElementById('email-chip');const orig=chip.innerHTML;chip.innerHTML='✓ Copied!';chip.style.background='var(--sage)';chip.style.color='var(--cream)';showToast();setTimeout(()=>{chip.innerHTML=orig;chip.style.background='var(--butter)';chip.style.color='';},2200);}).catch(showToast);}
-function copyEmail(){navigator.clipboard.writeText('yan.tran.ugc@gmail.com').then(showToast).catch(showToast);}
-function showToast(){const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400);}
-function declineAirdrop(){document.getElementById('airdrop-popup').innerHTML=`<div class="airdrop-msg"><strong>Just kidding 😅</strong>Try accepting this time!</div><div class="airdrop-btns" style="margin-top:8px"><button class="airdrop-decline" onclick="declineAgain()">Decline</button><button class="airdrop-accept" onclick="acceptAirdrop()">Accept</button></div>`;}
-function declineAgain(){document.getElementById('airdrop-popup').innerHTML=`<div class="airdrop-msg"><strong>Really? 😂</strong>One more chance...</div><div class="airdrop-btns" style="margin-top:8px"><button class="airdrop-decline" style="opacity:0.4" disabled>Decline</button><button class="airdrop-accept" onclick="acceptAirdrop()">Accept</button></div>`;}
-function acceptAirdrop(){document.getElementById('airdrop-popup').innerHTML=`<div class="airdrop-msg"><strong>Welcome! 🎉</strong>Glad you're here!</div>`;}
+
+// Nav active state
+window.addEventListener('scroll',()=>{
+  const ids=['home','videos','services','photos','contact'];
+  let cur='home';
+  ids.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-140)cur=id;});
+  document.querySelectorAll('.nav-links a').forEach(a=>{a.classList.toggle('active',(a.getAttribute('href')==='#'+cur));});
+});
+
+// Nav scroll
+document.querySelectorAll('.nav-links a').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const href=this.getAttribute('href');
+    if(!href||!href.startsWith('#'))return;
+    const target=document.getElementById(href.slice(1));
+    if(!target)return;
+    e.preventDefault();
+    if(href==='#contact'){
+      const top=target.offsetTop-Math.max(0,(window.innerHeight-target.offsetHeight)/2);
+      window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+    }else{
+      window.scrollTo({top:target.offsetTop,behavior:'smooth'});
+    }
+  });
+});
+
+// Hero headline letter animation
+(function(){
+  const el=document.getElementById('hero-headline');
+  const text="hi, i'm Yan.";
+  const yanIdx=text.indexOf('Y');
+  let h='';
+  for(let i=0;i<text.length;i++){
+    const c=text[i],isY=i>=yanIdx;
+    const cls='letter'+(isY?' yan-word':'');
+    h+=c===' '?`<span class="${cls}" style="display:inline-block">&nbsp;</span>`:`<span class="${cls}">${c}</span>`;
+  }
+  el.innerHTML=h;
+})();
+
+// Ticker
+(function(){
+  const words=['TECH & APPS','TRAVEL','LIFESTYLE','FINANCE','FITNESS'];
+  let html='';
+  for(let r=0;r<6;r++)words.forEach(w=>{html+=`<span>${w}</span><span>✳</span>`;});
+  const track=document.getElementById('ticker-track');
+  track.innerHTML=html;
+  requestAnimationFrame(()=>{
+    const half=track.scrollWidth/2;
+    const dur=(half/55).toFixed(1);
+    track.style.animation=`tickerMove ${dur}s linear infinite`;
+  });
+})();
+
+// Email copy
+function copyEmail(){
+  navigator.clipboard.writeText('yan.tran.ugc@gmail.com').then(showToast).catch(showToast);
+}
+function showToast(){
+  const t=document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2400);
+}
+
+// Form modal
 function openForm(){document.getElementById('form-modal').classList.add('open');}
 function closeForm(){document.getElementById('form-modal').classList.remove('open');}
 function closeBackdrop(e){if(e.target===document.getElementById('form-modal'))closeForm();}
-const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.07});
-document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
-setTimeout(()=>document.querySelectorAll('.fade-up').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible');}),80);
+
+// Video playback
 function playVideo(thumb){
   var video=thumb.querySelector('video');
   var poster=thumb.querySelector('.video-poster-img');
@@ -601,6 +753,11 @@ function toggleIntro(){
   if(vid.paused){vid.play();play.style.display='none';}
   else{vid.pause();play.style.display='flex';}
 }
+
+// Fade-up observer
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.07});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+setTimeout(()=>document.querySelectorAll('.fade-up').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible');}),80);
 </script>
 </body>
 </html>
