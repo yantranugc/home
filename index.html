@@ -9,10 +9,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--sage:#43593B;--sky:#7CC1E7;--butter:#F2D17E;--cream:#FAFAF2;--espresso:#58402E;--coral:#C4622D;--hero-blue:#3A6E8C}
 html{scroll-behavior:smooth;scroll-padding-top:0}
-body{background:var(--cream);color:var(--espresso);font-family:'DM Sans',sans-serif;cursor:none;overflow-x:hidden}
-#cursor{position:fixed;pointer-events:none;z-index:9999;width:24px;height:24px;transform:translate(-50%,-50%)}
-#cursor svg{display:block}
-#cursor-path{stroke:#58402E;transition:stroke 0.3s}
+body{background:var(--cream);color:var(--espresso);font-family:'DM Sans',sans-serif;overflow-x:hidden}
 
 /* NAV */
 nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;background:rgba(88,64,46,0.93);backdrop-filter:blur(14px);border-radius:999px;padding:9px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 4px 28px rgba(0,0,0,0.18);white-space:nowrap}
@@ -232,7 +229,6 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
 
 /* MOBILE */
 @media(max-width:768px){
-  #cursor{display:none}
   nav{top:10px;padding:7px 10px;gap:6px;max-width:calc(100vw - 20px);justify-content:center}
   .nav-dots{display:flex;flex-shrink:0}
   .nav-url{display:none}
@@ -312,8 +308,6 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
 </style>
 </head>
 <body>
-<div id="cursor"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path id="cursor-path" d="M12 2V22M2 12H22M5.5 5.5L18.5 18.5M18.5 5.5L5.5 18.5" stroke="#58402E" stroke-width="2.8" stroke-linecap="round"/></svg></div>
-
 <nav id="navbar">
   <div class="nav-dots"><div class="nav-dot" style="background:#FF5F57"></div><div class="nav-dot" style="background:#FFBD2E"></div><div class="nav-dot" style="background:#28C840"></div></div>
   <div class="nav-url">💌 yan.tran.ugc@gmail.com</div>
@@ -420,7 +414,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
-          <span class="vm-type">testimonial in morocco</span>
+          <span class="vm-type">testimonial</span>
           <span class="vm-niche">travel · app</span>
         </div>
       </div>
@@ -434,7 +428,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
-          <span class="vm-type">relatable / voiceover</span>
+          <span class="vm-type">relatable / pov</span>
           <span class="vm-niche">lifestyle · wellness</span>
         </div>
       </div>
@@ -462,7 +456,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
-          <span class="vm-type">problem / solution at work</span>
+          <span class="vm-type">problem / solution</span>
           <span class="vm-niche">SaaS · app · productivity</span>
         </div>
       </div>
@@ -504,7 +498,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge organic">Organic</span>
-          <span class="vm-type">testimonial / features</span>
+          <span class="vm-type">testimonial</span>
           <span class="vm-niche">lifestyle</span>
         </div>
       </div>
@@ -518,7 +512,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
-          <span class="vm-type">relatable for students</span>
+          <span class="vm-type">relatable</span>
           <span class="vm-niche">app · productivity</span>
         </div>
       </div>
@@ -532,7 +526,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
-          <span class="vm-type">product demo for spanish</span>
+          <span class="vm-type">product demo</span>
           <span class="vm-niche">app · education</span>
         </div>
       </div>
@@ -546,7 +540,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge organic">Organic</span>
-          <span class="vm-type">daily life in seattle</span>
+          <span class="vm-type">daily routine</span>
           <span class="vm-niche">lifestyle · fashion</span>
         </div>
       </div>
@@ -730,13 +724,6 @@ END ABOUT SECTION -->
 <div class="toast" id="toast">📋 Email copied!</div>
 
 <script>
-// Cursor
-const cp=document.getElementById('cursor-path');
-let mx=0,my=0,cx=0,cy=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
-(function aC(){cx+=(mx-cx)*0.13;cy+=(my-cy)*0.13;const c=document.getElementById('cursor');c.style.left=cx+'px';c.style.top=cy+'px';requestAnimationFrame(aC)})();
-window.addEventListener('scroll',()=>{const bp=document.querySelector('.bottom-photos');cp.setAttribute('stroke',bp&&window.scrollY>=bp.offsetTop-60?'#F2D17E':'#58402E');});
-
 // Nav active state
 window.addEventListener('scroll',()=>{
   const ids=['home','videos','services','photos','contact'];
