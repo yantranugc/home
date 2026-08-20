@@ -57,7 +57,7 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .chip{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:5px 13px;font-size:11px;color:rgba(245,240,232,0.85)}
 .email-chip{background:var(--butter)!important;border-color:rgba(88,64,46,0.25)!important;cursor:pointer;font-weight:500;color:var(--espresso)!important;transition:all 0.2s;text-decoration:none;font-size:13px;padding:8px 18px}
 .email-chip:hover{background:#edc960!important}
-.email-click-note{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.3px;color:rgba(245,240,232,0.55);margin-top:2px}
+.email-click-note{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.3px;color:rgba(245,240,232,0.85);margin-top:2px;display:flex;align-items:center;gap:5px}
 
 /* ticker */
 .ticker-wrap{overflow:hidden;padding:11px 0;background:var(--butter)}
@@ -118,9 +118,9 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .phone-notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:38px;height:5px;background:rgba(0,0,0,0.2);border-radius:3px;z-index:4}
 .play-btn-ref{position:relative;z-index:3;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(245,240,232,0.7);display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);transition:background 0.2s,border-color 0.2s;flex-shrink:0}
 .video-thumb-ref:hover .play-btn-ref{background:rgba(0,0,0,0.45);border-color:rgba(245,240,232,1)}
-.video-progress{position:absolute;left:0;bottom:0;width:100%;height:14px;display:flex;align-items:flex-end;z-index:5;cursor:pointer;padding-top:8px}
-.video-progress-track{width:100%;height:3px;background:rgba(245,240,232,0.3);border-radius:2px;overflow:hidden}
-.video-progress-fill{height:100%;width:0%;background:var(--butter);border-radius:2px}
+.video-progress{position:absolute;left:0;bottom:0;width:100%;height:18px;display:flex;align-items:flex-end;z-index:5;cursor:pointer;padding-top:10px;padding-bottom:6px}
+.video-progress-track{width:100%;height:5px;background:rgba(0,0,0,0.45);border:1px solid rgba(245,240,232,0.3);border-radius:3px;overflow:hidden}
+.video-progress-fill{height:100%;width:0%;background:var(--butter);border-radius:3px;box-shadow:0 0 6px rgba(242,209,126,0.7)}
 .play-btn-ref::after{content:'';width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:11px solid rgba(245,240,232,0.9);margin-left:3px}
 .vid-meta-clean{width:100%;display:flex;flex-direction:column;gap:2px;padding:2px 0}
 .vid-meta-clean .vm-type{font-family:'Special Elite',monospace;font-size:13px;color:var(--espresso);letter-spacing:0.5px;font-weight:600}
@@ -345,7 +345,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
 
       <div class="email-center-wrap">
         <a href="mailto:yan.tran.ugc@gmail.com" class="chip email-chip">💌 yan.tran.ugc@gmail.com</a>
-        <div class="email-click-note">click to email</div>
+        <div class="email-click-note">↑ click to email</div>
       </div>
     </div>
 
@@ -466,7 +466,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
-          <span class="vm-type">testimonial</span>
+          <span class="vm-type">demo / testimonial</span>
           <span class="vm-niche">travel · app</span>
         </div>
       </div>
@@ -511,7 +511,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
-          <span class="vm-type">testimonial</span>
+          <span class="vm-type">product demo</span>
           <span class="vm-niche">lifestyle · travel</span>
         </div>
       </div>
@@ -526,7 +526,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
-          <span class="vm-type">testimonial</span>
+          <span class="vm-type">educational / trend</span>
           <span class="vm-niche">finance · tech</span>
         </div>
       </div>
@@ -541,7 +541,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
-          <span class="vm-type">relatable / pov</span>
+          <span class="vm-type">relatable</span>
           <span class="vm-niche">lifestyle · wellness</span>
         </div>
       </div>
@@ -561,18 +561,18 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         </div>
       </div>
       <div class="vid-card-wrap">
-        <div class="video-logo"><img src="images/quillbot-logo.png" alt="QuillBot" loading="lazy" decoding="async"></div>
+        <div class="video-logo"><img src="images/cotopaxi-logo.png" alt="Cotopaxi" loading="lazy" decoding="async"></div>
         <div class="video-thumb-ref vc11-bg" onclick="playVideo(this)">
           <div class="phone-notch"></div>
-          <img class="video-poster-img" src="images/quillbot-cover.png" alt="QuillBot cover" loading="lazy" decoding="async">
-          <video src="videos/quillbot.mp4" playsinline preload="none"></video>
+          <img class="video-poster-img" src="images/cotopaxi-cover.png" alt="Cotopaxi cover" loading="lazy" decoding="async">
+          <video src="videos/cotopaxi.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
           <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
         </div>
         <div class="vid-meta-clean">
-          <span class="vm-badge paid">Paid</span>
-          <span class="vm-type">relatable</span>
-          <span class="vm-niche">app · productivity</span>
+          <span class="vm-badge organic">Organic</span>
+          <span class="vm-type">daily routine</span>
+          <span class="vm-niche">lifestyle · fashion</span>
         </div>
       </div>
       <div class="vid-card-wrap">
@@ -662,7 +662,7 @@ END PHOTOS SECTION -->
     <div class="bracket-label">[ get in touch ]</div>
     <div class="contact-headline">Let's make something together!</div>
     <div class="contact-email-lbl">contact me at</div>
-    <div class="contact-email-big" onclick="copyEmail()">💌 yan.tran.ugc@gmail.com</div>
+    <div class="contact-email-big" onclick="copyEmail()"><span style="text-decoration:none;display:inline-block">💌</span> yan.tran.ugc@gmail.com</div>
   </div>
   <div class="imsg-win fade-up" style="transition-delay:0.12s">
     <div class="imsg-tb">
