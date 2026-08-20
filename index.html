@@ -57,6 +57,7 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .chip{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:5px 13px;font-size:11px;color:rgba(245,240,232,0.85)}
 .email-chip{background:var(--butter)!important;border-color:rgba(88,64,46,0.25)!important;cursor:pointer;font-weight:500;color:var(--espresso)!important;transition:all 0.2s;text-decoration:none;font-size:13px;padding:8px 18px}
 .email-chip:hover{background:#edc960!important}
+.email-click-note{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.3px;color:rgba(245,240,232,0.55);margin-top:2px}
 
 /* ticker */
 .ticker-wrap{overflow:hidden;padding:11px 0;background:var(--butter)}
@@ -117,6 +118,9 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .phone-notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:38px;height:5px;background:rgba(0,0,0,0.2);border-radius:3px;z-index:4}
 .play-btn-ref{position:relative;z-index:3;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(245,240,232,0.7);display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);transition:background 0.2s,border-color 0.2s;flex-shrink:0}
 .video-thumb-ref:hover .play-btn-ref{background:rgba(0,0,0,0.45);border-color:rgba(245,240,232,1)}
+.video-progress{position:absolute;left:0;bottom:0;width:100%;height:14px;display:flex;align-items:flex-end;z-index:5;cursor:pointer;padding-top:8px}
+.video-progress-track{width:100%;height:3px;background:rgba(245,240,232,0.3);border-radius:2px;overflow:hidden}
+.video-progress-fill{height:100%;width:0%;background:var(--butter);border-radius:2px}
 .play-btn-ref::after{content:'';width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:11px solid rgba(245,240,232,0.9);margin-left:3px}
 .vid-meta-clean{width:100%;display:flex;flex-direction:column;gap:2px;padding:2px 0}
 .vid-meta-clean .vm-type{font-family:'Special Elite',monospace;font-size:13px;color:var(--espresso);letter-spacing:0.5px;font-weight:600}
@@ -126,7 +130,7 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .vc9-bg{background:#1f4a3d}.vc10-bg{background:#5c3d2e}.vc11-bg{background:#2a4a5c}.vc12-bg{background:#4a2d4a}
 
 /* SERVICES */
-#services{padding:60px 72px 52px;background:var(--cream);scroll-margin-top:0}
+#services{padding:60px 72px 52px;background:linear-gradient(150deg,#e4eef5,#dce8f2);scroll-margin-top:0}
 .services-inner{max-width:680px;margin:0 auto}
 .services-cols{display:grid;grid-template-columns:1fr 1fr;gap:48px}
 .services-col-title{font-family:'Abril Fatface',serif;font-size:18px;color:var(--espresso);margin-bottom:18px;line-height:1.1}
@@ -316,7 +320,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
     <a href="#home" class="active">Home</a>
     <a href="#videos">Examples</a>
     <a href="#services">Services</a>
-    <a href="#photos">Photos</a>
+    <!-- <a href="#photos">Photos</a> -->
     <a href="#contact">Contact</a>
   </div>
   <div class="nav-logo">YAN <div class="pulse"></div> <span class="nav-ugc">UGC</span></div>
@@ -341,6 +345,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
 
       <div class="email-center-wrap">
         <a href="mailto:yan.tran.ugc@gmail.com" class="chip email-chip">💌 yan.tran.ugc@gmail.com</a>
+        <div class="email-click-note">click to email</div>
       </div>
     </div>
 
@@ -399,61 +404,35 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
     <div class="section-label">[ my work ]</div>
     <div class="examples-header">
       <div class="examples-title">Examples</div>
-      <a href="https://drive.google.com/drive/u/1/folders/1vGiUqbdl0x44QrqvwOmL8X1UcTBQy27o" target="_blank" class="gdrive-btn">
+      <!-- <a href="https://drive.google.com/drive/u/1/folders/1vGiUqbdl0x44QrqvwOmL8X1UcTBQy27o" target="_blank" class="gdrive-btn">
         <svg class="gdrive-ico" viewBox="0 0 87.3 78"><path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="#0066da"/><path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z" fill="#00ac47"/><path d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z" fill="#ea4335"/><path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="#00832d"/><path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#2684fc"/><path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 27h27.45c0-1.55-.4-3.1-1.2-4.5z" fill="#ffba00"/></svg>
         DOWNLOAD ALL VIDEOS
-      </a>
+      </a> -->
     </div>
     <div class="video-grid4">
       <div class="vid-card-wrap">
-        <div class="video-logo"><img src="images/airalo-logo.png" alt="Airalo" loading="lazy" decoding="async"></div>
+        <div class="video-logo"><img src="images/wise-logo.png" alt="Wise" loading="lazy" decoding="async"></div>
         <div class="video-thumb-ref vc1-bg" onclick="playVideo(this)">
           <div class="phone-notch"></div>
-          <img class="video-poster-img" src="images/airalo-cover.png" alt="Airalo cover" loading="lazy" decoding="async">
-          <video src="videos/airalo.mp4" playsinline preload="none"></video>
+          <img class="video-poster-img" src="images/wise-cover.png" alt="Wise cover" loading="lazy" decoding="async">
+          <video src="videos/wise.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
+          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
-          <span class="vm-type">testimonial</span>
-          <span class="vm-niche">travel · app</span>
-        </div>
-      </div>
-      <div class="vid-card-wrap">
-        <div class="video-logo"><img src="images/diva-logo.png" alt="DIVA x Walgreens" loading="lazy" decoding="async"></div>
-        <div class="video-thumb-ref vc2-bg" onclick="playVideo(this)">
-          <div class="phone-notch"></div>
-          <img class="video-poster-img" src="images/diva-cover.png" alt="DIVA x Walgreens cover" loading="lazy" decoding="async">
-          <video src="videos/diva.mp4" playsinline preload="none"></video>
-          <div class="play-btn-ref"></div>
-        </div>
-        <div class="vid-meta-clean">
-          <span class="vm-badge paid">Paid</span>
-          <span class="vm-type">relatable / pov</span>
-          <span class="vm-niche">lifestyle · wellness</span>
-        </div>
-      </div>
-      <div class="vid-card-wrap">
-        <div class="video-logo"><img src="images/americantourister-logo.png" alt="American Tourister x Disney" loading="lazy" decoding="async"></div>
-        <div class="video-thumb-ref vc3-bg" onclick="playVideo(this)">
-          <div class="phone-notch"></div>
-          <img class="video-poster-img" src="images/americantourister-cover.png" alt="American Tourister x Disney cover" loading="lazy" decoding="async">
-          <video src="videos/americantourister.mp4" playsinline preload="none"></video>
-          <div class="play-btn-ref"></div>
-        </div>
-        <div class="vid-meta-clean">
-          <span class="vm-badge organic">Organic</span>
-          <span class="vm-type">fun vibes in hawaii</span>
-          <span class="vm-niche">travel</span>
+          <span class="vm-type">before + after</span>
+          <span class="vm-niche">finance · app</span>
         </div>
       </div>
       <div class="vid-card-wrap">
         <div class="video-logo"><img src="images/slack-logo.png" alt="Slack" loading="lazy" decoding="async"></div>
-        <div class="video-thumb-ref vc4-bg" onclick="playVideo(this)">
+        <div class="video-thumb-ref vc2-bg" onclick="playVideo(this)">
           <div class="phone-notch"></div>
           <img class="video-poster-img" src="images/slack-cover.png" alt="Slack cover" loading="lazy" decoding="async">
           <video src="videos/slack.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
+          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
@@ -462,17 +441,48 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         </div>
       </div>
       <div class="vid-card-wrap">
-        <div class="video-logo"><img src="images/wise-logo.png" alt="Wise" loading="lazy" decoding="async"></div>
-        <div class="video-thumb-ref vc5-bg" onclick="playVideo(this)">
+        <div class="video-logo"><img src="images/goodr-logo.png" alt="goodr" loading="lazy" decoding="async"></div>
+        <div class="video-thumb-ref vc3-bg" onclick="playVideo(this)">
           <div class="phone-notch"></div>
-          <img class="video-poster-img" src="images/wise-cover.png" alt="Wise cover" loading="lazy" decoding="async">
-          <video src="videos/wise.mp4" playsinline preload="none"></video>
+          <img class="video-poster-img" src="images/goodr-cover.png" alt="goodr cover" loading="lazy" decoding="async">
+          <video src="videos/goodr.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
+          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
-          <span class="vm-type">before + after</span>
-          <span class="vm-niche">finance · app</span>
+          <span class="vm-type">testimonial</span>
+          <span class="vm-niche">lifestyle · fitness</span>
+        </div>
+      </div>
+      <div class="vid-card-wrap">
+        <div class="video-logo"><img src="images/airalo-logo.png" alt="Airalo" loading="lazy" decoding="async"></div>
+        <div class="video-thumb-ref vc4-bg" onclick="playVideo(this)">
+          <div class="phone-notch"></div>
+          <img class="video-poster-img" src="images/airalo-cover.png" alt="Airalo cover" loading="lazy" decoding="async">
+          <video src="videos/airalo.mp4" playsinline preload="none"></video>
+          <div class="play-btn-ref"></div>
+          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
+        </div>
+        <div class="vid-meta-clean">
+          <span class="vm-badge paid">Paid</span>
+          <span class="vm-type">testimonial</span>
+          <span class="vm-niche">travel · app</span>
+        </div>
+      </div>
+      <div class="vid-card-wrap">
+        <div class="video-logo"><img src="images/microsoft-logo.png" alt="Microsoft" loading="lazy" decoding="async"></div>
+        <div class="video-thumb-ref vc5-bg" onclick="playVideo(this)">
+          <div class="phone-notch"></div>
+          <img class="video-poster-img" src="images/microsoft-cover.png" alt="Microsoft cover" loading="lazy" decoding="async">
+          <video src="videos/microsoft.mp4" playsinline preload="none"></video>
+          <div class="play-btn-ref"></div>
+          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
+        </div>
+        <div class="vid-meta-clean">
+          <span class="vm-badge organic">Organic</span>
+          <span class="vm-type">product demo</span>
+          <span class="vm-niche">app · productivity · tech</span>
         </div>
       </div>
       <div class="vid-card-wrap">
@@ -482,6 +492,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           <img class="video-poster-img" src="images/tylenol-cover.png" alt="Tylenol cover" loading="lazy" decoding="async">
           <video src="videos/tylenol.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
+          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
@@ -490,73 +501,78 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
         </div>
       </div>
       <div class="vid-card-wrap">
-        <div class="video-logo"><img src="images/goodr-logo.png" alt="goodr" loading="lazy" decoding="async"></div>
+        <div class="video-logo"><img src="images/alpaka-logo.png" alt="Alpaka" loading="lazy" decoding="async"></div>
         <div class="video-thumb-ref vc7-bg" onclick="playVideo(this)">
           <div class="phone-notch"></div>
-          <img class="video-poster-img" src="images/goodr-cover.png" alt="goodr cover" loading="lazy" decoding="async">
-          <video src="videos/goodr.mp4" playsinline preload="none"></video>
+          <img class="video-poster-img" src="images/alpaka-cover.png" alt="Alpaka cover" loading="lazy" decoding="async">
+          <video src="videos/alpaka.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
+          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
         </div>
         <div class="vid-meta-clean">
-          <span class="vm-badge organic">Organic</span>
+          <span class="vm-badge paid">Paid</span>
           <span class="vm-type">testimonial</span>
-          <span class="vm-niche">lifestyle</span>
+          <span class="vm-niche">lifestyle · travel</span>
+        </div>
+      </div>
+      <div class="vid-card-wrap">
+        <div class="video-logo"><img src="images/solofunds-logo.png" alt="SoLo Funds" loading="lazy" decoding="async"></div>
+        <div class="video-thumb-ref vc8-bg" onclick="playVideo(this)">
+          <div class="phone-notch"></div>
+          <img class="video-poster-img" src="images/solofunds-cover.png" alt="SoLo Funds cover" loading="lazy" decoding="async">
+          <video src="videos/solofunds.mp4" playsinline preload="none"></video>
+          <div class="play-btn-ref"></div>
+          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
+        </div>
+        <div class="vid-meta-clean">
+          <span class="vm-badge paid">Paid</span>
+          <span class="vm-type">testimonial</span>
+          <span class="vm-niche">finance · tech</span>
+        </div>
+      </div>
+      <div class="vid-card-wrap">
+        <div class="video-logo"><img src="images/diva-logo.png" alt="DIVA x Walgreens" loading="lazy" decoding="async"></div>
+        <div class="video-thumb-ref vc9-bg" onclick="playVideo(this)">
+          <div class="phone-notch"></div>
+          <img class="video-poster-img" src="images/diva-cover.png" alt="DIVA x Walgreens cover" loading="lazy" decoding="async">
+          <video src="videos/diva.mp4" playsinline preload="none"></video>
+          <div class="play-btn-ref"></div>
+          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
+        </div>
+        <div class="vid-meta-clean">
+          <span class="vm-badge paid">Paid</span>
+          <span class="vm-type">relatable / pov</span>
+          <span class="vm-niche">lifestyle · wellness</span>
+        </div>
+      </div>
+      <div class="vid-card-wrap">
+        <div class="video-logo"><img src="images/americantourister-logo.png" alt="American Tourister x Disney" loading="lazy" decoding="async"></div>
+        <div class="video-thumb-ref vc10-bg" onclick="playVideo(this)">
+          <div class="phone-notch"></div>
+          <img class="video-poster-img" src="images/americantourister-cover.png" alt="American Tourister x Disney cover" loading="lazy" decoding="async">
+          <video src="videos/americantourister.mp4" playsinline preload="none"></video>
+          <div class="play-btn-ref"></div>
+          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
+        </div>
+        <div class="vid-meta-clean">
+          <span class="vm-badge paid">Paid</span>
+          <span class="vm-type">fun vibes in hawaii</span>
+          <span class="vm-niche">travel</span>
         </div>
       </div>
       <div class="vid-card-wrap">
         <div class="video-logo"><img src="images/quillbot-logo.png" alt="QuillBot" loading="lazy" decoding="async"></div>
-        <div class="video-thumb-ref vc8-bg" onclick="playVideo(this)">
+        <div class="video-thumb-ref vc11-bg" onclick="playVideo(this)">
           <div class="phone-notch"></div>
           <img class="video-poster-img" src="images/quillbot-cover.png" alt="QuillBot cover" loading="lazy" decoding="async">
           <video src="videos/quillbot.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
+          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
           <span class="vm-type">relatable</span>
           <span class="vm-niche">app · productivity</span>
-        </div>
-      </div>
-      <div class="vid-card-wrap">
-        <div class="video-logo"><img src="images/preply-logo.png" alt="Preply" loading="lazy" decoding="async"></div>
-        <div class="video-thumb-ref vc9-bg" onclick="playVideo(this)">
-          <div class="phone-notch"></div>
-          <img class="video-poster-img" src="images/preply-cover.png" alt="Preply cover" loading="lazy" decoding="async">
-          <video src="videos/preply.mp4" playsinline preload="none"></video>
-          <div class="play-btn-ref"></div>
-        </div>
-        <div class="vid-meta-clean">
-          <span class="vm-badge paid">Paid</span>
-          <span class="vm-type">product demo</span>
-          <span class="vm-niche">app · education</span>
-        </div>
-      </div>
-      <div class="vid-card-wrap">
-        <div class="video-logo"><img src="images/cotopaxi-logo.png" alt="Cotopaxi" loading="lazy" decoding="async"></div>
-        <div class="video-thumb-ref vc10-bg" onclick="playVideo(this)">
-          <div class="phone-notch"></div>
-          <img class="video-poster-img" src="images/cotopaxi-cover.png" alt="Cotopaxi cover" loading="lazy" decoding="async">
-          <video src="videos/cotopaxi.mp4" playsinline preload="none"></video>
-          <div class="play-btn-ref"></div>
-        </div>
-        <div class="vid-meta-clean">
-          <span class="vm-badge organic">Organic</span>
-          <span class="vm-type">daily routine</span>
-          <span class="vm-niche">lifestyle · fashion</span>
-        </div>
-      </div>
-      <div class="vid-card-wrap">
-        <div class="video-logo"><img src="images/radiantwaxing-logo.png" alt="Radiant Waxing" loading="lazy" decoding="async"></div>
-        <div class="video-thumb-ref vc11-bg" onclick="playVideo(this)">
-          <div class="phone-notch"></div>
-          <img class="video-poster-img" src="images/radiantwaxing-cover.png" alt="Radiant Waxing cover" loading="lazy" decoding="async">
-          <video src="videos/radiantwaxing.mp4" playsinline preload="none"></video>
-          <div class="play-btn-ref"></div>
-        </div>
-        <div class="vid-meta-clean">
-          <span class="vm-badge organic">Organic</span>
-          <span class="vm-type">pov / reaction</span>
-          <span class="vm-niche">lifestyle · wellness</span>
         </div>
       </div>
       <div class="vid-card-wrap">
@@ -566,6 +582,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           <img class="video-poster-img" src="images/doordash-cover.png" alt="DoorDash cover" loading="lazy" decoding="async">
           <video src="videos/doordash.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
+          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
@@ -608,7 +625,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
   </div>
 </section>
 
-<!-- PHOTOS -->
+<!-- PHOTOS SECTION — commented out, preserved for later use
 <section id="photos" style="position:relative">
   <a href="mailto:yan.tran.ugc@gmail.com" class="section-email-wm wm-dark">yan.tran.ugc@gmail.com</a>
   <div class="section-label">[ still shots ]</div>
@@ -637,6 +654,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
     </div>
   </div>
 </section>
+END PHOTOS SECTION -->
 
 <!-- CONTACT -->
 <section id="contact" style="position:relative;overflow:hidden">
@@ -644,7 +662,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
     <div class="bracket-label">[ get in touch ]</div>
     <div class="contact-headline">Let's make something together!</div>
     <div class="contact-email-lbl">contact me at</div>
-    <div class="contact-email-big" onclick="copyEmail()">yan.tran.ugc@gmail.com</div>
+    <div class="contact-email-big" onclick="copyEmail()">💌 yan.tran.ugc@gmail.com</div>
   </div>
   <div class="imsg-win fade-up" style="transition-delay:0.12s">
     <div class="imsg-tb">
@@ -799,7 +817,16 @@ function playVideo(thumb){
   var poster=thumb.querySelector('.video-poster-img');
   var playBtn=thumb.querySelector('.play-btn-ref');
   var notch=thumb.querySelector('.phone-notch');
+  var fill=thumb.querySelector('.video-progress-fill');
   video.dataset.userPlay='1'; // tell the background preloader: hands off, this one's live
+  if(!video.dataset.progressBound){
+    video.dataset.progressBound='1';
+    video.addEventListener('timeupdate',function(){
+      if(fill && video.duration){
+        fill.style.width=(video.currentTime/video.duration*100)+'%';
+      }
+    });
+  }
   if(video.paused){
     if(poster){poster.style.opacity='0';poster.style.pointerEvents='none';}
     if(notch){notch.style.display='none';}
@@ -808,6 +835,20 @@ function playVideo(thumb){
   }else{
     video.pause();
     if(playBtn){playBtn.style.display='flex';}
+  }
+}
+
+// Seek bar — click/tap anywhere on the progress track to jump to that point
+function seekVideo(e,progressEl){
+  e.stopPropagation();
+  var thumb=progressEl.closest('.video-thumb-ref');
+  var video=thumb.querySelector('video');
+  var track=progressEl.querySelector('.video-progress-track');
+  var rect=track.getBoundingClientRect();
+  var clickX=(e.clientX!==undefined?e.clientX:e.touches[0].clientX)-rect.left;
+  var pct=Math.min(1,Math.max(0,clickX/rect.width));
+  if(video.duration){
+    video.currentTime=pct*video.duration;
   }
 }
 
