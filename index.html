@@ -118,9 +118,13 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;bac
 .phone-notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:38px;height:5px;background:rgba(0,0,0,0.2);border-radius:3px;z-index:4}
 .play-btn-ref{position:relative;z-index:3;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(245,240,232,0.7);display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);transition:background 0.2s,border-color 0.2s;flex-shrink:0}
 .video-thumb-ref:hover .play-btn-ref{background:rgba(0,0,0,0.45);border-color:rgba(245,240,232,1)}
-.video-progress{position:absolute;left:0;bottom:0;width:100%;height:18px;display:flex;align-items:flex-end;z-index:5;cursor:pointer;padding-top:10px;padding-bottom:6px}
-.video-progress-track{width:100%;height:5px;background:rgba(0,0,0,0.45);border:1px solid rgba(245,240,232,0.3);border-radius:3px;overflow:hidden}
-.video-progress-fill{height:100%;width:0%;background:var(--butter);border-radius:3px;box-shadow:0 0 6px rgba(242,209,126,0.7)}
+.video-progress{position:absolute;left:0;bottom:0;width:100%;height:18px;display:flex;align-items:flex-end;z-index:5;cursor:pointer;padding-top:10px;padding-bottom:6px;touch-action:none}
+.video-progress-track{position:relative;width:100%;height:5px;background:rgba(0,0,0,0.45);border:1px solid rgba(245,240,232,0.3);border-radius:3px}
+.video-progress-fill{height:100%;width:0%;background:var(--butter);border-radius:3px;box-shadow:0 0 6px rgba(242,209,126,0.7);pointer-events:none}
+.video-progress-thumb{position:absolute;top:50%;left:0%;width:11px;height:11px;border-radius:50%;background:var(--butter);border:1.5px solid rgba(245,240,232,0.95);box-shadow:0 0 5px rgba(0,0,0,0.5);transform:translate(-50%,-50%);z-index:6;opacity:0;transition:opacity 0.15s;pointer-events:none}
+.video-progress:hover .video-progress-thumb,.video-progress.seeking .video-progress-thumb{opacity:1}
+.video-progress-time{position:absolute;bottom:16px;left:0%;transform:translateX(-50%);background:rgba(28,28,25,0.85);color:#F5F0E8;font-family:'Special Elite',monospace;font-size:9px;letter-spacing:0.3px;padding:2px 6px;border-radius:3px;white-space:nowrap;z-index:7;opacity:0;pointer-events:none;transition:opacity 0.15s}
+.video-progress.seeking .video-progress-time{opacity:1}
 .play-btn-ref::after{content:'';width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:11px solid rgba(245,240,232,0.9);margin-left:3px}
 .vid-meta-clean{width:100%;display:flex;flex-direction:column;gap:2px;padding:2px 0}
 .vid-meta-clean .vm-type{font-family:'Special Elite',monospace;font-size:13px;color:var(--espresso);letter-spacing:0.5px;font-weight:600}
@@ -417,7 +421,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           <img class="video-poster-img" src="images/wise-cover.png" alt="Wise cover" loading="lazy" decoding="async">
           <video src="videos/wise.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
-          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
+          <div class="video-progress" onpointerdown="startSeek(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div><div class="video-progress-thumb"></div></div><div class="video-progress-time"></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
@@ -432,7 +436,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           <img class="video-poster-img" src="images/slack-cover.png" alt="Slack cover" loading="lazy" decoding="async">
           <video src="videos/slack.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
-          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
+          <div class="video-progress" onpointerdown="startSeek(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div><div class="video-progress-thumb"></div></div><div class="video-progress-time"></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
@@ -447,7 +451,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           <img class="video-poster-img" src="images/goodr-cover.png" alt="goodr cover" loading="lazy" decoding="async">
           <video src="videos/goodr.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
-          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
+          <div class="video-progress" onpointerdown="startSeek(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div><div class="video-progress-thumb"></div></div><div class="video-progress-time"></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
@@ -462,7 +466,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           <img class="video-poster-img" src="images/airalo-cover.png" alt="Airalo cover" loading="lazy" decoding="async">
           <video src="videos/airalo.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
-          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
+          <div class="video-progress" onpointerdown="startSeek(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div><div class="video-progress-thumb"></div></div><div class="video-progress-time"></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
@@ -477,7 +481,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           <img class="video-poster-img" src="images/microsoft-cover.png" alt="Microsoft cover" loading="lazy" decoding="async">
           <video src="videos/microsoft.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
-          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
+          <div class="video-progress" onpointerdown="startSeek(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div><div class="video-progress-thumb"></div></div><div class="video-progress-time"></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge organic">Organic</span>
@@ -492,7 +496,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           <img class="video-poster-img" src="images/tylenol-cover.png" alt="Tylenol cover" loading="lazy" decoding="async">
           <video src="videos/tylenol.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
-          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
+          <div class="video-progress" onpointerdown="startSeek(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div><div class="video-progress-thumb"></div></div><div class="video-progress-time"></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
@@ -507,7 +511,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           <img class="video-poster-img" src="images/alpaka-cover.png" alt="Alpaka cover" loading="lazy" decoding="async">
           <video src="videos/alpaka.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
-          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
+          <div class="video-progress" onpointerdown="startSeek(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div><div class="video-progress-thumb"></div></div><div class="video-progress-time"></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
@@ -522,7 +526,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           <img class="video-poster-img" src="images/solofunds-cover.png" alt="SoLo Funds cover" loading="lazy" decoding="async">
           <video src="videos/solofunds.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
-          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
+          <div class="video-progress" onpointerdown="startSeek(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div><div class="video-progress-thumb"></div></div><div class="video-progress-time"></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
@@ -537,7 +541,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           <img class="video-poster-img" src="images/diva-cover.png" alt="DIVA x Walgreens cover" loading="lazy" decoding="async">
           <video src="videos/diva.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
-          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
+          <div class="video-progress" onpointerdown="startSeek(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div><div class="video-progress-thumb"></div></div><div class="video-progress-time"></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
@@ -552,7 +556,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           <img class="video-poster-img" src="images/americantourister-cover.png" alt="American Tourister x Disney cover" loading="lazy" decoding="async">
           <video src="videos/americantourister.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
-          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
+          <div class="video-progress" onpointerdown="startSeek(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div><div class="video-progress-thumb"></div></div><div class="video-progress-time"></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
@@ -567,7 +571,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           <img class="video-poster-img" src="images/cotopaxi-cover.png" alt="Cotopaxi cover" loading="lazy" decoding="async">
           <video src="videos/cotopaxi.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
-          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
+          <div class="video-progress" onpointerdown="startSeek(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div><div class="video-progress-thumb"></div></div><div class="video-progress-time"></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge organic">Organic</span>
@@ -582,7 +586,7 @@ footer{background:var(--butter);padding:13px 28px;display:flex;align-items:cente
           <img class="video-poster-img" src="images/doordash-cover.png" alt="DoorDash cover" loading="lazy" decoding="async">
           <video src="videos/doordash.mp4" playsinline preload="none"></video>
           <div class="play-btn-ref"></div>
-          <div class="video-progress" onclick="seekVideo(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div></div></div>
+          <div class="video-progress" onpointerdown="startSeek(event,this)"><div class="video-progress-track"><div class="video-progress-fill"></div><div class="video-progress-thumb"></div></div><div class="video-progress-time"></div></div>
         </div>
         <div class="vid-meta-clean">
           <span class="vm-badge paid">Paid</span>
@@ -817,13 +821,13 @@ function playVideo(thumb){
   var poster=thumb.querySelector('.video-poster-img');
   var playBtn=thumb.querySelector('.play-btn-ref');
   var notch=thumb.querySelector('.phone-notch');
-  var fill=thumb.querySelector('.video-progress-fill');
+  var progressEl=thumb.querySelector('.video-progress');
   video.dataset.userPlay='1'; // tell the background preloader: hands off, this one's live
   if(!video.dataset.progressBound){
     video.dataset.progressBound='1';
     video.addEventListener('timeupdate',function(){
-      if(fill && video.duration){
-        fill.style.width=(video.currentTime/video.duration*100)+'%';
+      if(progressEl && video.duration && !progressEl.classList.contains('seeking')){
+        updateSeekVisuals(progressEl,video.currentTime/video.duration,video);
       }
     });
   }
@@ -838,18 +842,54 @@ function playVideo(thumb){
   }
 }
 
-// Seek bar — click/tap anywhere on the progress track to jump to that point
-function seekVideo(e,progressEl){
-  e.stopPropagation();
-  var thumb=progressEl.closest('.video-thumb-ref');
-  var video=thumb.querySelector('video');
-  var track=progressEl.querySelector('.video-progress-track');
-  var rect=track.getBoundingClientRect();
-  var clickX=(e.clientX!==undefined?e.clientX:e.touches[0].clientX)-rect.left;
-  var pct=Math.min(1,Math.max(0,clickX/rect.width));
-  if(video.duration){
-    video.currentTime=pct*video.duration;
+// Seek bar — tap to jump, or press-drag the little dot along the track.
+// A live timestamp bubble tracks your thumb while you're dragging.
+function formatTime(sec){
+  if(!isFinite(sec)||sec<0) sec=0;
+  sec=Math.floor(sec);
+  var m=Math.floor(sec/60), s=sec%60;
+  return m+':'+(s<10?'0':'')+s;
+}
+
+function updateSeekVisuals(progressEl,pct,video){
+  pct=Math.min(1,Math.max(0,pct));
+  var pctStr=(pct*100)+'%';
+  var fill=progressEl.querySelector('.video-progress-fill');
+  var dot=progressEl.querySelector('.video-progress-thumb');
+  var label=progressEl.querySelector('.video-progress-time');
+  if(fill) fill.style.width=pctStr;
+  if(dot) dot.style.left=pctStr;
+  if(label){
+    label.style.left=pctStr;
+    if(video && video.duration) label.textContent=formatTime(pct*video.duration);
   }
+}
+
+function startSeek(e,progressEl){
+  e.stopPropagation();
+  var thumbWrap=progressEl.closest('.video-thumb-ref');
+  var video=thumbWrap.querySelector('video');
+  var track=progressEl.querySelector('.video-progress-track');
+  progressEl.classList.add('seeking');
+
+  function moveTo(clientX){
+    var rect=track.getBoundingClientRect();
+    var pct=(clientX-rect.left)/rect.width;
+    updateSeekVisuals(progressEl,pct,video);
+    if(video.duration) video.currentTime=Math.min(1,Math.max(0,pct))*video.duration;
+  }
+  moveTo(e.clientX);
+
+  function onMove(ev){ moveTo(ev.clientX); }
+  function onUp(){
+    progressEl.classList.remove('seeking');
+    document.removeEventListener('pointermove',onMove);
+    document.removeEventListener('pointerup',onUp);
+    document.removeEventListener('pointercancel',onUp);
+  }
+  document.addEventListener('pointermove',onMove);
+  document.addEventListener('pointerup',onUp);
+  document.addEventListener('pointercancel',onUp);
 }
 
 // Smart video preload — buffers only videos actually near the viewport (small
